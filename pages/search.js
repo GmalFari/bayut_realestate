@@ -25,7 +25,6 @@ const Search = ({properties}) => {
         justifyContent="flex-start"
         alignItems="center"
         onClick={() => setSearchFilter(!searchFilter)}
-        
         >
         <Text  > Search properties by filter </Text>
         <Icon paddingLeft="2" w="7" as={BsFilter} />
