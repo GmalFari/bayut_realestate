@@ -41,23 +41,25 @@
     }
     }
     .carousel-inner .carousel-caption h5 {
-      font-size: 30px;
+      font-size: 20px;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-top:2px;
+      font-weight: bold;
     }
     
     
     .carousel-caption p {
-      width:60%;
+
+      width:80%;
       margin: auto;
-      font-size: 18px;
+      font-size: 12px;
       line-height: 1.9;
     }
   
   
     .carousel-inner .card {
-      margin-top:100px;
+      margin-top:50px;
       // background-color: var(--dark-color);
     }
     .carousel-inner .card .card-body {
