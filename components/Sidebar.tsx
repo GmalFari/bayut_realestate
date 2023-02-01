@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import Head from 'next/head';
 import {
   IconButton,
   Avatar,
@@ -54,7 +55,8 @@ export default function SidebarWithHeader({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box >
+    <Box 
+    style={{"fontFamily":"font-family: 'Cairo', sans-serif"}} >
       <SidebarContent
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
@@ -67,6 +69,7 @@ export default function SidebarWithHeader({
         returnFocusOnClose={false}
         onOverlayClick={onClose}
         >
+
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -83,10 +86,13 @@ export default function SidebarWithHeader({
 interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
-
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+
   return (
+    <>
+     
     <Box  
+      style={{"fontFamily":"sans-serif,Cairo"}}
       transition="3s ease"
       bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
@@ -96,7 +102,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+        <Text style={{"fontFamily":"font-family: 'Cairo', sans-serif"}} fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           لبنة
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
@@ -106,7 +112,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           {link.name}
         </NavItem>
       ))}
-    </Box>
+    </Box></>
   );
 };
 
@@ -152,6 +158,8 @@ interface MobileProps extends FlexProps {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
     <Flex
+
+    style={{"fontFamily":"sans-serif,Cairo"}}
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
@@ -176,7 +184,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontWeight="bold">
         لبنة
       </Text>
-
       <HStack spacing={{ base: '0', md: '6' }}>
         <IconButton
           size="lg"
@@ -202,7 +209,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">Jamal Farea</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>
