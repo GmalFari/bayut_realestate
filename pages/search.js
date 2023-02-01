@@ -62,9 +62,16 @@ export async function getServerSideProps({query}) {
     const locationExternalIDs = query.locationExternalIDs || '5002';
     const categoryExternalID = query.categoryExternalID || '4'; 
     const data = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=${locationExternalIDs}
-                    &purpose=${purpose}&hitsPerPage=6
-                    &rentFrequency=${rentFrequency}&minPrice=${minPrice}&
-                    maxPrice=${maxPrice}&bathsMin=${bathsMin}&roomsMin=${roomsMin}&sort=${sort}&areaMax=${areaMax}`);
+                    &purpose=${purpose}&hitsPerPage=6&
+                    rentFrequency=${rentFrequency}&
+                    minPrice=${minPrice}&
+                    maxPrice=${maxPrice}&
+                    bathsMin=${bathsMin}&
+                    roomsMin=${roomsMin}&
+                    sort=${sort}&
+                    areaMax=${areaMax}&
+                    categoryExternalID=${categoryExternalID}
+                    `);
 
                     return {
                         props:{

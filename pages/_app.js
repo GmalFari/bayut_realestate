@@ -5,6 +5,8 @@ import Layout from '../components/Layout';
 import "nprogress/nprogress.css";
 import NProgress  from "nprogress";
 import { useEffect } from "react";
+
+import "./carousel.scss";
 function MyApp({Component,pageProps,router}){
     useEffect(() => {
         const handleRouteStart = () => NProgress.start();

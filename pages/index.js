@@ -3,7 +3,7 @@ import Image from 'next/image';
 import {Flex,Box,Text,Button} from '@chakra-ui/react';
 import Property from '../components/Property';
 import {baseUrl,fetchApi} from '../utils/fetchApi';
-
+import "."
 const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUrl }) => (
   <Flex  flexWrap="wrap" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner"  />
@@ -54,8 +54,8 @@ export default function Home({propertiesForSale,propertiesForRent}) {
  
 
 export async function getStaticProps() {
-  const propertyForSale = await fetchApi(`${baseUrl}/properties/list?lang=ar&locationExternalIDs=5002&lang=ar&purpose=for-sale&hitsPerPage=3`);
-  const propertyForRent = await fetchApi(`${baseUrl}/properties/list?lang=ar&locationExternalIDs=5002&lang=ar&purpose=for-rent&hitsPerPage=3`) 
+  const propertyForSale = await fetchApi(`${baseUrl}/properties/list?lang=ar&locationExternalIDs=6020&lang=ar&purpose=for-sale&hitsPerPage=3`);
+  const propertyForRent = await fetchApi(`${baseUrl}/properties/list?lang=ar&locationExternalIDs=6020&lang=ar&purpose=for-rent&hitsPerPage=3`) 
   return {
     props: {
       propertiesForSale:propertyForSale?.hits,
