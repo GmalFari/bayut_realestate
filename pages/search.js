@@ -22,7 +22,7 @@ const Search = ({properties}) => {
         p={{"base":"0","md":"2"}}
         fontWeight="black"
         fontSize="lg"
-        justifyContent="flex-start"
+        justifyContent="center"
         alignItems="center"
         onClick={() => setSearchFilter(!searchFilter)}
         >

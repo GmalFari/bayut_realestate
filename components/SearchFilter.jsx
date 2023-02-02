@@ -13,7 +13,6 @@ const SearchFilter = () => {
   const [showLocations, setShowLocations] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
   const searchProperties = (
     (filtervalues) =>{
       const path = router.pathname;

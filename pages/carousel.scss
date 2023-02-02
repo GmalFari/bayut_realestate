@@ -77,7 +77,7 @@
       margin-left:2px;
       border-radius:3px;
       padding:3px 8px;
-      color:white;
+      color:black;
       position: relative;
     }
     
@@ -95,13 +95,19 @@
     }
   
     .carousel-inner .card .rent-sale  button.sale:hover::after {
-      border-color: var(--red-color) transparent transparent;
+      border-color: white transparent transparent;
+  
+    }
+    .carousel-inner .card .rent-sale  button.rent:hover::after {
+      border-color: var(--green-color) transparent transparent;
   
     }
   
+  
    
     .carousel-inner .card .rent-sale  button.sale {
-      background-color: var(--red-color);
+      background-color: white;
+      
    
     }
     .carousel-inner .card .rent-sale  button.rent{

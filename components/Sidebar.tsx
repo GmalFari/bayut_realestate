@@ -76,7 +76,7 @@ export default function SidebarWithHeader({
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <Box ml={{ base: 0, md: 60 }} p="0">
         {/* {children} */}
       </Box>
     </Box>
@@ -103,7 +103,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text style={{"fontFamily":"font-family: 'Cairo', sans-serif"}} fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          لبنة
+          LinaHouse
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -182,7 +182,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold">
-        لبنة
+        LinaHouse
       </Text>
       <HStack spacing={{ base: '0', md: '6' }}>
         <IconButton
