@@ -31,12 +31,12 @@ const SearchFilter = () => {
     if(searchTerm !== ''){
       const fetchData = async ()=>{
         setLoading(true);
-        const data = await fetchApi(`{baseUrl}/auto-complete?query=${searchTerm}`)
+        const data = await fetchApi(`{baseUrl}/auto-complete?query=Abu dhabi`)
         setLoading(data?.hits);
       };
       fetchData();
     }
-  },[searchTerm]);
+  },[]);
   
   
   return (

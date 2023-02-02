@@ -5,27 +5,16 @@ import Image from 'next/image';
 import advancedSearch from "../assets/images/advanced.svg";
 import image from "../assets/images/yemen_enemy/img1.jpg";
 import img2 from "../assets/images/yemen_enemy/img2.jpg";
-
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-  Button
-} from '@chakra-ui/react';
+import { useState , useEffect } from 'react';
+import { fetchApi } from '../utils/fetchApi';
+import Main_search from "../components/Main_search";
 import { Box } from '@chakra-ui/react';
 import '@coreui/coreui/dist/css/coreui.min.css';
-import { FaSearch } from 'react-icons/fa';
 const Carousel = () => {
-
   return (
+  
     <>
-    <Head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet" />
-      </Head>
+    
       <Box>
         <Box className="carousel-inner">
           <Box className="carousel-item active">
@@ -41,33 +30,7 @@ const Carousel = () => {
             <Box className="carousel-caption">
               <h5>أبحث الأن عن بيت الأحلام</h5>
               <p>نوفر لك جميع ماتحتاجة عن العقارات في مكان واحد</p>
-              <Box className="card">
-                <Box background="#0000009c" borderRadius="20px" padding={0}   className="card-body">
-                  <Box  background="#0000009c" borderRadius="10px" className="rent-sale"  display="flex" justifyContent="space-around" position="absolute" top="-30">
-                  <Link href="/search?purpose=for-sale" passHref>
-                    <button  className="sale">للبيع</button>
-                  </Link>
-                  <Link href="/search?purpose=for-rent" passHref>
-                    <button className="rent">للإيجار</button>
-                    </Link>
-                  </Box>
-                  <FormControl 
-                       dir="rtl" 
-                       padding="5px" 
-                       background="white" 
-                       borderRadius={10} width="100%" 
-                       position="absolute" top="20px" >
-                      <Input paddingLeft="60px" color="black" border="none"  type='text' placeholder='أبحث بأسم المدينة المنطقة أو النوع'   />
-                    <Button width="20px" zIndex="10" borderRadius="30%" position="absolute" left="10px" color="white" background="#187875">
-                      <Link href="/search?locationExternalIDs=6020" passHref>
-                    <FaSearch/>
-                    </Link>
-                    </Button>              
-                  </FormControl>
-
-                </Box>
-               
-                </Box>
+              <Main_search />
               </Box>
           </Box>
         </Box>
@@ -77,3 +40,34 @@ const Carousel = () => {
 }
 
 export default Carousel
+
+
+export async function getServerSideProps({query}) {
+  const purpose = query.purpose || 'for-rent';
+  const rentFrequency = query.rentFrequency || 'yearly';
+  const minPrice = query.minPrice || '0';
+  const maxPrice = query.maxPrice || '1000000';
+  const bathsMin = query.bathsMin || '0';
+  const roomsMin = query.roomsMin || '0';
+  const sort = query.sort || 'price-desc';
+  const areaMax = query.areaMax || '35000';
+  const locationExternalIDs = query.locationExternalIDs || '5002';
+  const categoryExternalID = query.categoryExternalID || '4'; 
+  const data = await fetchApi(`${baseUrl}/auto-complete?locationExternalIDs=${locationExternalIDs}
+                  &purpose=${purpose}&hitsPerPage=6&
+                  rentFrequency=${rentFrequency}&
+                  minPrice=${minPrice}&
+                  maxPrice=${maxPrice}&
+                  bathsMin=${bathsMin}&
+                  roomsMin=${roomsMin}&
+                  sort=${sort}&
+                  areaMax=${areaMax}&
+                  categoryExternalID=${categoryExternalID}
+                  `);
+
+                  return {
+                      props:{
+                          properties:data?.hits
+                      }
+                  }
+}
