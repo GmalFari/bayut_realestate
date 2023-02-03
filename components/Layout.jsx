@@ -33,7 +33,7 @@ export default function Layout({ children }) {
       <Box  m='auto'>
         <header>
           {/* <Navbar /> */}
-          {windowWidth <  767?<Navbar />:<Navbar />}
+          {windowWidth <  767?<Sidebar />:<Navbar />}
         </header>
         <div>
           <Carousel />
