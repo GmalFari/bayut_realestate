@@ -103,7 +103,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text style={{"fontFamily":"font-family: 'Cairo', sans-serif"}} fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          LinaHouse
+          LibnaHouse
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -182,7 +182,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold">
-        LinaHouse
+        LibnaHouse
       </Text>
       <HStack spacing={{ base: '0', md: '6' }}>
         <IconButton
