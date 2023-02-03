@@ -27,7 +27,7 @@ const MainSearch = () => {
         };
         fetchData();
     }
-  },[loading]);
+  },[searchTerm]);
   
 
   return (

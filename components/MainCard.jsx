@@ -6,6 +6,7 @@ import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text, Card,Stack, CardFo
 import millify from 'millify';
 import {FaBed , FaBath} from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
+import { GoVerified } from 'react-icons/go';
 const MainCard = (
   
   {property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID,createdAt}}  
