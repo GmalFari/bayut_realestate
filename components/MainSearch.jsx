@@ -13,7 +13,7 @@ import { FaSearch } from 'react-icons/fa';
 import { useState,useEffect } from 'react';
 import { fetchApi,baseUrl } from '../utils/fetchApi';
 import { useRouter } from 'next/router';
-const Main_search = () => {
+const MainSearch = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
   const[loading,setLoading] = useState(false);
@@ -61,4 +61,4 @@ const Main_search = () => {
   )
 }
 
-export default Main_search
+export default MainSearch

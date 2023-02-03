@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {Flex,Box,Text,Icon} from '@chakra-ui/react';
 import {BsFilter } from 'react-icons/bs'; 
 import SearchFilter from '../components/SearchFilter';
-import Main_search from "../components/Main_search"
+import Main_search from "../components/MainSearch"
 import Property from '../components/Property';
 import noresult from '../assets/images/noresult.svg';
 import {baseUrl,fetchApi} from '../utils/fetchApi';

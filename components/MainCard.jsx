@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import image from "../assets/images/yemen_enemy/img1.jpg";
+import image from "../assets/images/img1.jpg";
 import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text, Card,Stack, CardFooter,Heading, Box } from '@chakra-ui/react'
 import millify from 'millify';
 import {FaBed , FaBath} from 'react-icons/fa';
@@ -17,9 +17,6 @@ const MainCard = (
 
   return (
   <>
-  <Head>
-
-  </Head>
      <Card minW="200px" maxW='sm'>
    
    <CardBody position="relative">

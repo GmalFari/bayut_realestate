@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import advancedSearch from "../assets/images/advanced.svg";
-import image from "../assets/images/yemen_enemy/img1.jpg";
-import img2 from "../assets/images/yemen_enemy/img2.jpg";
+import image from "../assets/images/img1.jpg";
+import img2 from "../assets/images/img2.jpg";
 import { useState , useEffect } from 'react';
 import { fetchApi } from '../utils/fetchApi';
-import Main_search from "../components/Main_search";
+import MainSearch from "../components/MainSearch";
 import { Box } from '@chakra-ui/react';
 import '@coreui/coreui/dist/css/coreui.min.css';
 const Carousel = () => {
