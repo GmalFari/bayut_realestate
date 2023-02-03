@@ -30,7 +30,7 @@ const Carousel = () => {
             <Box className="carousel-caption">
               <h5>أبحث الأن عن بيت الأحلام</h5>
               <p>نوفر لك جميع ماتحتاجة عن العقارات في مكان واحد</p>
-              <Main_search />
+              <MainSearch />
               </Box>
           </Box>
         </Box>
