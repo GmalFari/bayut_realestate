@@ -25,6 +25,7 @@ export default function Home({propertiesForSale,propertiesForRent}) {
       <h1 style={{"textAlign":"center",margin:'10px',fontSize:"40px",fontWeight:"bold"}}   width="10px"  height="10px">اَخر العقارت </h1>
       <Box display="flex" flexFlow="row" flexWrap="" overflowX="scroll">
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
+      
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
       </Box>
       <Banner
