@@ -4,6 +4,14 @@ import {Flex,Box,Text,Button} from '@chakra-ui/react';
 import Property from '../components/Property';
 import {baseUrl,fetchApi} from '../utils/fetchApi';
 import MainCard from "../components/MainCard";
+import Section1 from "../components/Section1";
+import Section2 from "../components/Section2";
+
+import Rent from "../assets/images/Rent_a_home.webp";
+import Sell from "../assets/images/Sell_a_home.webp";
+import Buy from "../assets/images/Buy_a_home.webp";
+
+
 const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUrl }) => (
   <Flex  flexWrap="wrap" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner"  />
@@ -28,30 +36,22 @@ export default function Home({propertiesForSale,propertiesForRent}) {
       
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
       </Box>
-      <Banner
-       purpose="Rent A Home "
-       title1="rental home for "
-       title2="Everyone" 
-       desc1="Explore Apartments, Villas , Homes"
-       buttonText="Explore Renting"
-       linkName="/search?purpose=for-rent"
-       imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
-       />
-       <Flex flexWrap="wrap" >
-        {propertiesForRent.map((property) => <Property property={property} key={property.id}/>)}
-       </Flex>
-       <Banner
-       purpose="Buy A Home"
-       title1="Find , Buy & Own Your"
-       title2="Dream Home" 
-       desc1="Explore Apartments, Villas , Homes"
-       buttonText="Explore Buying"
-       linkName="/search?purpose=for-sale"
-       imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
-       />
-       <Flex flexWrap="wrap" justifyContent="center" >
-       {propertiesForSale.map((property) => <Property property={property} key= {property.id}/>)}
-       </Flex>
+      <Box display={['flex']} 
+         flexDirection={['column','column','row']}  
+        justifyContent="center"
+        alignItems="center"
+         width="100%">
+        <Section1 image={Rent} title="أستأجر عقار " content="نحن نخلق تجربة سلسة عبر الإنترنت - من التسوق على أكبر شبكة تأجير ، إلى التقديم ، إلى دفع الإيجار."  />
+        <Section1 image={Buy} title=" أشتري عقار" content="اعثر على مكانك من خلال تجربة صور غامرة ومعظم القوائم ، بما في ذلك الأشياء التي لن تجدها في أي مكان آخر."/>
+        <Section1 image={Sell} title="بيع عقار " content="بغض النظر عن المسار الذي تسلكه لبيع منزلك ، يمكننا مساعدتك في اجتياز عملية بيع ناجحة." />
+      </Box>
+      <Box>
+      العقارات الأكثر بحثاً
+      </Box>
+      <Box>
+        <Section2 />
+        </Box>
+      
       </Box>
   )
 }
