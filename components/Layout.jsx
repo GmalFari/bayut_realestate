@@ -30,7 +30,7 @@ export default function Layout({ children }) {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
           <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet" />
       </Head>
-      <Box  m={['10px','10px']}>
+      <Box>
         <header>
           {/* <Navbar /> */}
           {windowWidth <  767?<Sidebar />:<Navbar />}
@@ -38,7 +38,7 @@ export default function Layout({ children }) {
         <div>
           <Carousel />
         </div>
-        <main>{children}</main>
+        <main  m={['10px','10px']}>{children}</main>
         <footer>
           <Footer />
         </footer>
