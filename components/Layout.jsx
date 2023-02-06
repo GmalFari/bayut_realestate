@@ -36,7 +36,7 @@ export default function Layout({ children }) {
           {windowWidth <  767?<Sidebar />:<Navbar />}
         </header>
         <div>
-          {/* <Carousel /> */}
+          <Carousel />
         </div>
         <main ms={['2px','50px','100px']}>{children}</main>
         <footer>
