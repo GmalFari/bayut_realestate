@@ -40,7 +40,7 @@ export default function Home({propertiesForSale,propertiesForRent}) {
          flexDirection={['column','column','row']}  
         justifyContent="center"
         alignItems="center"
-         width="100%">
+         >
         <Section1 image={Rent} title="أستأجر عقار " content="نحن نخلق تجربة سلسة عبر الإنترنت - من التسوق على أكبر شبكة تأجير ، إلى التقديم ، إلى دفع الإيجار."  />
         <Section1 image={Buy} title=" أشتري عقار" content="اعثر على مكانك من خلال تجربة صور غامرة ومعظم القوائم ، بما في ذلك الأشياء التي لن تجدها في أي مكان آخر."/>
         <Section1 image={Sell} title="بيع عقار " content="بغض النظر عن المسار الذي تسلكه لبيع منزلك ، يمكننا مساعدتك في اجتياز عملية بيع ناجحة." />
