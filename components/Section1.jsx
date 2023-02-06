@@ -5,11 +5,14 @@ import Image from 'next/image';
 import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text,CardHeader, Card,Stack, CardFooter,Heading, Box } from '@chakra-ui/react'
 const Section1 = ({image,title,content}) => {
   return (
-    <Card textAlign="center" ms={['2px','5px','50px']} mt="50px"
-              border="1px" borderColor="rgba(0,0,0,0.3)">
-    <CardBody display={['block','flex','block','block']}  position="relative">
-    <Box>
-    <Image src={image}  width={['100%','50%']} height="100%" alt="default house" />
+    <Card textAlign="center"
+      maxH="400px"
+      mt="50px"
+      border="1px" 
+      borderColor="rgba(0,0,0,0.3)">
+    <CardBody display={['block','flex','block','block']} >
+    <Box height="190px">
+    <Image src={image}  width={['100%','50%']}  alt="default house" />
     </Box>
     <Box spacing='2'>
        <Box >

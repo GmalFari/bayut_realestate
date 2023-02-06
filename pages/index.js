@@ -37,6 +37,7 @@ export default function Home({propertiesForSale,propertiesForRent}) {
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
       </Box>
       <Box display={['flex']} 
+          margin="20px"
          flexDirection={['column','column','row']}  
         justifyContent="center"
         alignItems="center"

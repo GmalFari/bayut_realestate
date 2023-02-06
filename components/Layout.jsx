@@ -38,7 +38,7 @@ export default function Layout({ children }) {
         <div>
           <Carousel />
         </div>
-        <main  >{children}</main>
+        <main>{children}</main>
         <footer>
           <Footer />
         </footer>
