@@ -36,7 +36,7 @@ const SearchFilter = () => {
       };
       fetchData();
     }
-  },[]);
+  },[searchTerm]);
   
   
   return (
