@@ -21,7 +21,7 @@ const Search = ({properties}) => {
         bg="gray.100"
         borderBottom="1px"
         borderColor="gray.200"
-        p={{"base":"5px","md":"5px"}}
+        p={{"base":"10","md":"2"}}
         fontWeight="black"
         fontSize="lg"
         justifyContent="center"
@@ -31,7 +31,7 @@ const Search = ({properties}) => {
         <Text  > Search properties by filter </Text>
         <Icon paddingLeft="2" w="7" as={BsFilter} />
         </Flex>
-        {searchFilter && <SearchFilter />}
+        {searchFilter && <Main_search />}
         <Text fontSize="2xl" p="4" fontWeight="bold">
             properties {router.query.purpose}
         </Text>
