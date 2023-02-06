@@ -6,7 +6,7 @@ import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text,CardHeader, Card,St
 const Section1 = ({image,title,content}) => {
   return (
     <Card textAlign="center" ms={['2px','5px','50px']} mt="50px"
-             w={['400px','90%']}  border="1px" borderColor="rgba(0,0,0,0.3)">
+              border="1px" borderColor="rgba(0,0,0,0.3)">
     <CardBody display={['block','flex','block','block']}  position="relative">
     <Box>
     <Image src={image}  width={['100%','50%']} height="100%" alt="default house" />
