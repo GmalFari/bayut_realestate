@@ -16,9 +16,9 @@ const Section1 = ({image,title,content}) => {
     <Box height="190px">
     <Image src={image}  width={['100%','50%']}  alt="default house" />
     </Box>
-    <Box spacing='2'>
+    <Box spacing='2' >
        <Box >
-            <CardHeader p="0 0 10px " textAlign={"start"} fontSize={['1.5rem','1.6rem','2rem']} fontWeight="600">
+            <CardHeader p="3px 0 10px " textAlign={"start"} fontSize={['1.5rem','1.6rem','2rem']} fontWeight="600">
             {title}
             </CardHeader>
             <Text mb="20px" textAlign="right" fontSize="md" lineHeight="1.4">
