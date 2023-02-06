@@ -6,6 +6,8 @@ import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text,CardHeader, Card,St
 const Section1 = ({image,title,content}) => {
   return (
     <Card textAlign="center"
+      ms={['2px','5px','50px']}
+      me={['2px','5px','50px']}
       maxH="400px"
       mt="50px"
       border="1px" 
