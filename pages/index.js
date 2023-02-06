@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import {Flex,Box,Text,Button} from '@chakra-ui/react';
+import {Flex,Box,Text,Button, Heading} from '@chakra-ui/react';
 import Property from '../components/Property';
 import {baseUrl,fetchApi} from '../utils/fetchApi';
 import MainCard from "../components/MainCard";
@@ -45,13 +45,12 @@ export default function Home({propertiesForSale,propertiesForRent}) {
         <Section1 image={Buy} title=" أشتري عقار" content="اعثر على مكانك من خلال تجربة صور غامرة ومعظم القوائم ، بما في ذلك الأشياء التي لن تجدها في أي مكان آخر."/>
         <Section1 image={Sell} title="بيع عقار " content="بغض النظر عن المسار الذي تسلكه لبيع منزلك ، يمكننا مساعدتك في اجتياز عملية بيع ناجحة." />
       </Box>
-      <Box>
+      <Box mt="100px" textAlign="center" >
+      <Heading  >
       العقارات الأكثر بحثاً
-      </Box>
-      <Box>
-        <Section2 />
-        </Box>
-      
+      </Heading>
+      <Section2 />
+      </Box>     
       </Box>
   )
 }

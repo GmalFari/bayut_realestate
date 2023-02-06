@@ -8,12 +8,12 @@ const Section1 = ({image,title,content}) => {
     <Card textAlign="center"
       ms={['2px','5px','50px']}
       me={['2px','5px','50px']}
-      maxH="400px"
+      height="fit-content"
       mt="50px"
       border="1px" 
       borderColor="rgba(0,0,0,0.3)">
     <CardBody display={['block','flex','block','block']} >
-    <Box height="190px">
+    <Box height="180">
     <Image src={image}  width={['100%','50%']}  alt="default house" />
     </Box>
     <Box spacing='2' >
