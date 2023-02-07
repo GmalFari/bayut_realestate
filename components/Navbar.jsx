@@ -1,35 +1,38 @@
 import Link from "next/link";
-import {Menu,MenuButton,MenuList,MenuItem,IconButton,Flex,Box,Spacer } from '@chakra-ui/react';
+import {Text,Flex,Box, Grid,GridItem, Button } from '@chakra-ui/react';
 import {FcMenu,FcHome,FcAbout}  from 'react-icons/fc';
 import {BsSearch} from 'react-icons/bs'
 import {FiKey} from 'react-icons/fi';
 
 const Navbar = () =>  (
-        <Flex p="2" borderBottom="1px" borderColor="gray.100">
-        <Box fontSize="3xl" color="blue.400" fontWeight="bold">
-            <Link href="/"  >LibnaHouse</Link>
-        </Box>
-        <Spacer/>
-        <Box >
-            <Menu display="none" >
-                <MenuButton as={IconButton} icon={<FcMenu /> } variant="outlined" color="red.400"/>
-                <MenuList>
-                    <Link href="/" passHref>
-                        <MenuItem icon={<FcHome />}>Home</MenuItem>
-                    </Link>
-                    <Link href="/search" passHref>
-                        <MenuItem icon={<BsSearch />}>search</MenuItem>
-                    </Link>
-                    <Link href="/search?purpose=for-sale" passHref>
-                        <MenuItem icon={<FcAbout />}>Buy Property</MenuItem>
-                    </Link>
-                    <Link href="/search?purpose=for-rent" passHref>
-                        <MenuItem icon={<FiKey />}>Rent Property</MenuItem>
-                    </Link>
-                </MenuList>
-            </Menu>
-
-        </Box>
+    <Grid
+    templateAreas={`"header nav profile"`}
+    gridTemplateRows={'50px'}
+    gridTemplateColumns={"300px 1fr 200px"}
+    pt="10px"
+  >
+    <GridItem  fontWeight="bold"  pl='2' area={'header'}>
+      LibnaHouse
+    </GridItem>
+    <GridItem pl='2'  area={'nav'}>
+    <Flex fontWeight="bold" justifyContent="space-around">
+    <Link href="/" passHref>
+    <Text>Home</Text>
+    </Link>
+    <Link href="/" passHref>
+    <Text>Search</Text>
+    </Link>
+    <Link href="/search?purpose=for-rent" passHref>
+    <Text>properties For Rent</Text>
+    </Link>
+    <Link href="/search?purpose=for-sale" passHref>
+    <Text>properties For Sale</Text>
+    </Link>
     </Flex>
+    </GridItem>
+    <GridItem ms="100px" pl='2' area={'profile'}>
+      <Button >Login</Button>
+    </GridItem>
+  </Grid>
     );
 export default Navbar;

@@ -29,21 +29,25 @@ const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUr
 
 export default function Home({propertiesForSale,propertiesForRent}) {
   return (
-    <Box  dir='rtl'> 
+    <Box  dir='rtl'
+     ms={['2px','50px','100px']}
+     m={['2px','50px','100px']}> 
       <h1 style={{"textAlign":"center",margin:'10px',fontSize:"40px",fontWeight:"bold"}}   width="10px"  height="10px">اَخر العقارت </h1>
       <Box display="flex" flexFlow="row" flexWrap="" overflowX="scroll">
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
-      
-      {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
-      </Box>
+    </Box>
       <Box display={['flex']} 
-         flexDirection={['column','column','row']}  
+         flexDirection={['column','column','column','row']}  
         justifyContent="center"
         alignItems="center"
         >
+        <Link href="/search?purpose=for-rent">
         <Section1 image={Rent} title="أستأجر عقار " content="نحن نخلق تجربة سلسة عبر الإنترنت - من التسوق على أكبر شبكة تأجير ، إلى التقديم ، إلى دفع الإيجار."  />
+        </Link>
+        <Link href="/search?purpose=for-sale">
         <Section1 image={Buy} title=" أشتري عقار" content="اعثر على مكانك من خلال تجربة صور غامرة ومعظم القوائم ، بما في ذلك الأشياء التي لن تجدها في أي مكان آخر."/>
-        <Section1 image={Sell} title="بيع عقار " content="بغض النظر عن المسار الذي تسلكه لبيع منزلك ، يمكننا مساعدتك في اجتياز عملية بيع ناجحة." />
+        </Link>
+        <Section1  image={Sell} title="بيع عقار " content="بغض النظر عن المسار الذي تسلكه لبيع منزلك ، يمكننا مساعدتك في اجتياز عملية بيع ناجحة." />
       </Box>
       <Box mt="100px" textAlign="center" >
       <Heading  >
