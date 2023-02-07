@@ -6,7 +6,7 @@ import {baseUrl,fetchApi} from '../utils/fetchApi';
 import MainCard from "../components/MainCard";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
-
+import Carousel from '../components/Carousel';
 import Rent from "../assets/images/Rent_a_home.webp";
 import Sell from "../assets/images/Sell_a_home.webp";
 import Buy from "../assets/images/Buy_a_home.webp";
@@ -29,7 +29,9 @@ const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUr
 
 export default function Home({propertiesForSale,propertiesForRent}) {
   return (
-    <Box  dir='rtl'
+   <>
+    <Carousel />
+     <Box  dir='rtl'
      ms={['2px','50px','100px']}
      m={['2px','50px','100px']}> 
       <h1 style={{"textAlign":"center",margin:'10px',fontSize:"40px",fontWeight:"bold"}}   width="10px"  height="10px">اَخر العقارت </h1>
@@ -56,6 +58,7 @@ export default function Home({propertiesForSale,propertiesForRent}) {
       <Section2 />
       </Box>     
       </Box>
+   </>
   )
 }
  
