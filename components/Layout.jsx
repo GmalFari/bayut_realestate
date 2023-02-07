@@ -23,7 +23,7 @@ export default function Layout({ children }) {
   }, [windowWidth]);
 
   return (
-    <>
+    <Box>
       <Head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +38,7 @@ export default function Layout({ children }) {
           <Footer />
         </footer>
       </Box>
-    </>
+    </Box>
   );
 }
 
