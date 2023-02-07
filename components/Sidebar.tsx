@@ -198,8 +198,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Menu>
             <MenuButton
               py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: 'none' }}>
+              transition="all 0.3s">
               <HStack>
                 <Avatar
                   size={'sm'}
