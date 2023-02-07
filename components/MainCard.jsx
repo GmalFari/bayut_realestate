@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import image from "../assets/images/img1.jpg";
 import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text, Card,Stack, CardFooter,Heading, Box } from '@chakra-ui/react'
@@ -17,13 +18,12 @@ const MainCard = (
     const created = currentDate.getHours() - date.getHours();
 
   return (
-  <>
+    <Link href={`/property/${externalID}`} passHref>
      <Card minW="200px" maxW='sm'>
-   
-   <CardBody position="relative">
-   <Image src={coverPhoto ? coverPhoto.url:image} width="400" height="200" alt="default house" />
-   <Box  
-         position="absolute"
+      <CardBody position="relative">
+      <Image src={coverPhoto ? coverPhoto.url:image} width="400" height="200" alt="default house" />
+      <Box   
+            position="absolute"
          top="25px"
          left="25px"
          background="#187875b0" 
@@ -55,7 +55,7 @@ const MainCard = (
    </CardBody>
    <Divider />
  </Card>
-  </>
+    </Link>
   )
 }
 

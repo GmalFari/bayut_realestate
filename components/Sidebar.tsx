@@ -185,7 +185,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold">
+        <Link href="/" passHref>
         LibnaHouse
+        </Link>
       </Text>
       <HStack spacing={{ base: '0', md: '6' }}>
         <IconButton
