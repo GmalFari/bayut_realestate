@@ -26,9 +26,9 @@ const Section2 = () => {
   
  return (
   
-  <Box  justifyContent="space-between" flexWrap="wrap">
+  <Flex  justifyContent="space-between" flexWrap="wrap">
    {content}
-  </Box>
+  </Flex>
 
   )
 }
