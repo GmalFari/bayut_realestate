@@ -23,15 +23,12 @@ function MyApp({Component,pageProps,router}){
         };
       }, [router]);
     return (
-        <> 
-        <Head>
-        </Head>
+        
         <ChakraProvider>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
         </ChakraProvider>
-        </>
     );
 }
 

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text,CardHeader, Card,Stack, CardFooter,Heading, Box } from '@chakra-ui/react'
 const Section1 = ({image,title,content}) => {
   return (
-    <Card _hover="display:none"
+    <Card 
      textAlign="center"
       ms={['2px','5px','50px']}
       me={['2px','5px','10px']}

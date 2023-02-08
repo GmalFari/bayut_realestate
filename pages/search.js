@@ -40,7 +40,7 @@ const Search = ({properties}) => {
         </Flex>
         {properties.length === 0 && (
             <Flex justifyContent="center" alignItems="center" flexDirection="column" marginTop="5" marginBottom="5">
-            <Image alt="no result" src={noresult}/>
+            <Image width="auto" height="auto" alt="no result" src={noresult}/>
             <Text fontSize="2xl" marginTop="3">No Results founds</Text>
             </Flex>
         )}

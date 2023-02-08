@@ -29,12 +29,15 @@ const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUr
 
 export default function Home({propertiesForSale,propertiesForRent}) {
   return (
-   <>
+  
+   <Box>
     <Carousel />
-     <Box  dir='rtl'
+     <Box 
      ms={['2px','50px','100px']}
      m={['2px','50px','100px']}> 
-      <h1 style={{"textAlign":"center",margin:'10px',fontSize:"40px",fontWeight:"bold"}}   width="10px"  height="10px">اَخر العقارت </h1>
+      <Heading textAlign="center" margin='10px' fontSize="20px" 
+      fontWeight="bold"   width="10px"  height="10px">اَخر العقارت 
+      </Heading>
       <Box display="flex" flexFlow="row" flexWrap="" overflowX="scroll">
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
     </Box>
@@ -58,7 +61,7 @@ export default function Home({propertiesForSale,propertiesForRent}) {
       <Section2 />
       </Box>     
       </Box>
-   </>
+   </Box>
   )
 }
  

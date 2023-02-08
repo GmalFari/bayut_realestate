@@ -16,7 +16,6 @@ export default function Layout({ children }) {
     if(isWindow){
       setWindowWidth(getWidth());
         window.addEventListener('resize', resize);
-        return () => window.removeEventListener('resize', resize);
     
     }
   //eslint-disable-next-line
@@ -24,19 +23,12 @@ export default function Layout({ children }) {
 
   return (
     <Box>
-      <Head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet" />
-      </Head>
       <Box>
       
           {/* <Navbar /> */}
           {windowWidth <  767?<Sidebar />:<Navbar />}
         <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
+          <Footer/>
       </Box>
     </Box>
   );

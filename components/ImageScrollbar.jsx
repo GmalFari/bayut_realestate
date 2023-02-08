@@ -52,7 +52,7 @@ const ImageScrollbar = ({data}) => {
   return (
        <>
         <Box borderRadius="10px" width={imgWH.width} maxH={imgWH.height}   overflow={imgWH.height< 500?"hidden":"scroll"} textAlign="center">
-        <Img src={defaultImg} ref={imageRef}  alt="" objectFit="contain"  />
+        <Img src={defaultImg} width="auto " height="auto" ref={imageRef}  alt="" objectFit="contain"  />
         </Box>
          <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} style={{overflow:"hidden"}}>
         {data.map((item) =>(
@@ -63,7 +63,7 @@ const ImageScrollbar = ({data}) => {
                 <Img
                 
                 placeholder='blur' 
-                blurDataURL={item.url} 
+                // blurDataURL={item.url} 
                 src={item.url} 
                 width="100%"
                 height="100%"
