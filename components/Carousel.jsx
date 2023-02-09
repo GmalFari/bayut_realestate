@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import advancedSearch from "../assets/images/advanced.svg";
-import image from "../assets/images/img1.jpg";
+import image from "../assets/images/webImg1.webp";
 import img2 from "../assets/images/img2.jpg";
 import { useState , useEffect } from 'react';
 import { fetchApi } from '../utils/fetchApi';
