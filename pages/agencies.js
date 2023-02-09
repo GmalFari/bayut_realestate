@@ -9,7 +9,6 @@ import {
     Text,
     Stack,
     Button,
-    useColorModeValue,
   } from '@chakra-ui/react';
 import Link from 'next/link';
 import { FaHome } from 'react-icons/fa';
