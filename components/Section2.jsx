@@ -4,10 +4,7 @@ import { Box,CardHeader,Flex,Card,Text,Heading ,CardBody} from '@chakra-ui/react
 import { useState,useEffect } from 'react';
 import {sections} from "../utils/searchSections";
 const Section2 = () => {
-  const [content, setcontent] = useState(null);
-  useEffect((content)=>{
-      setcontent(contents)
-  },[sections])
+ 
   const contents = sections.map((content,index)=>(
    <Box key={`${content.title}-${index}`}  
    pt="10px" pb="10px" ms="20px" mt="50px" mb="50px" width={['100%','45%','25%','25%']}>
