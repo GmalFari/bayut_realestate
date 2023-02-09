@@ -19,7 +19,6 @@ const PropertyDetails = ({propertyDetails:
         {photos && <ImageScrollbar data={photos} />}
         
         <Box w="full" p="6" >
-            
         <Box w='full'>
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
           <Flex alignItems='center'>

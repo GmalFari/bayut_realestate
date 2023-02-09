@@ -20,7 +20,7 @@ const Carousel = () => {
                 <Image width="100%" minwidth="100%" src={image} alt="carousel image" />
             </picture>
             <Box className="carousel-caption">
-              <Heading>أبحث الأن عن بيت الأحلام</Heading>
+              <Heading >أبحث الأن عن بيت الأحلام</Heading>
               <Text>نوفر لك جميع ماتحتاجة عن العقارات في مكان واحد</Text>
               <MainSearch />
               </Box>

@@ -22,7 +22,7 @@ export default function Layout({ children }) {
   }, [windowWidth]);
 
   return (
-    <Box>
+    <Box dir="rtl">
       <Box>
       
           {/* <Navbar /> */}

@@ -35,10 +35,10 @@ export default function Home({propertiesForSale,propertiesForRent}) {
      <Box 
      ms={['2px','50px','100px']}
      m={['2px','50px','100px']}> 
-      <Heading textAlign="center" margin='10px' fontSize="20px" 
-      fontWeight="bold"   width="10px"  height="10px">اَخر العقارت 
+      <Heading textAlign="center" margin='10px' fontSize="40px" 
+      fontWeight="bold">   اَخر العقارت 
       </Heading>
-      <Box display="flex" flexFlow="row" flexWrap="" overflowX="scroll">
+      <Box display="flex" flexFlow="row" flexWrap="nowrap" overflowY="hidden" overflowX="scroll">
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
     </Box>
       <Box display={['flex']} 

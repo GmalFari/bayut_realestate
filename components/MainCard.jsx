@@ -18,11 +18,11 @@ const MainCard = (
 
   return (
     <Link href={`/property/${externalID}`} passHref>
-     <Card minW="200px" maxW='sm'>
+     <Card minW="200px" maxW='sm' maxH="300px" >
       <CardBody position="relative">
       <Image src={coverPhoto ? coverPhoto.url:image} width="400" height="200" alt="default house" />
       <Box   
-            position="absolute"
+        position="absolute"
          top="25px"
          left="25px"
          background="#187875b0" 
@@ -46,9 +46,11 @@ const MainCard = (
                 <Flex alignItems="center" p="1" justifyContent="space-between" w="250" color="blue.400">
                     {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
                 </Flex>
-                <Text fontSize="lg" >
-                    {title.length > 30 ? `${title.substring(0,30)}...`:title}
+                <Box>
+                <Text fontSize="md"  >
+                    {title.length > 30 ? `${title.substring(0,25)}...`:title}
                 </Text>
+                </Box>
             </Box>
        </Stack>
    </CardBody>
