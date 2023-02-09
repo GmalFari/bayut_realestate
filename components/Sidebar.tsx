@@ -46,6 +46,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'search',url:'/search', icon: FiTrendingUp },
   { name: 'property for sale',url:'/', icon: FiCompass },
   { name: 'property for rent',url:'/', icon: FiStar },
+  { name: 'agencies',url:'/agencies', icon: FiStar },
   { name: 'Settings',url:'/', icon: FiSettings },
 ];
 

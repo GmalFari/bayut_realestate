@@ -5,7 +5,7 @@ import { useState,useEffect } from 'react';
 import {sections} from "../utils/searchSections";
 const Section2 = () => {
   const [content, setcontent] = useState(null);
-  useEffect(()=>{
+  useEffect((content)=>{
       setcontent(contents)
   },[sections])
   const contents = sections.map((content,index)=>(
