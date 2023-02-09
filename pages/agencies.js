@@ -17,13 +17,12 @@ import { FaHome } from 'react-icons/fa';
 import {baseUrl,fetchApi} from '../utils/fetchApi';
 import Profile from '../components/Profile';  
   export default function SocialProfileWithImage({agencies}) {
-    console.log(agencies)
     return (
         <Box ms={['2px','50px','100px']} me={['2px','50px','100px']} >
           <Grid templateColumns='repeat( auto-fit, minmax(300px, 1fr) )' gap={6}  >
         {agencies.map((company)=>{
           return(
-            <Center>
+            <Center key={company.id}>
             <Box
               maxW={'300px'}
               w={'full'}
