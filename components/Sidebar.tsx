@@ -38,14 +38,15 @@ import { ReactText } from 'react';
 
 interface LinkItemProps {
   name: string;
+  url:string;
   icon: IconType;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'search', icon: FiTrendingUp },
-  { name: 'property for sale', icon: FiCompass },
-  { name: 'property for rent', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Home',url:'/', icon: FiHome },
+  { name: 'search',url:'/search', icon: FiTrendingUp },
+  { name: 'property for sale',url:'/', icon: FiCompass },
+  { name: 'property for rent',url:'/', icon: FiStar },
+  { name: 'Settings',url:'/', icon: FiSettings },
 ];
 
 export default function SidebarWithHeader({
@@ -110,8 +111,9 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
+        <NavItem key={link.name} url={link.url} icon={link.icon}>
+         {link.name}
+        
         </NavItem>
       ))}
     </Box></>
@@ -121,10 +123,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
   icon: IconType;
   children: ReactText;
+  url:string;
 }
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({url, icon, children, ...rest }: NavItemProps) => {
   return (
-    <Link href="/" style={{ textDecoration: 'none' }}>
+    <Link href={url} style={{ textDecoration: 'none' }}>
       <Flex
         
         align="center"
@@ -225,12 +228,16 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             <MenuList zIndex={999}
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              <MenuItem>
-              <Link href="/profile" passHref>profile</Link>
-                  </MenuItem>
-              <MenuItem>Settings</MenuItem>
+              
+              
+              <MenuItem>              
+                  <Link href="/profile/patriot-real-estate-7737" passHref>profile</Link>
+              </MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
+              <MenuItem>
+              <Link href="/profile/patriot-real-estate-7737" passHref>Settings</Link>
+              </MenuItem>
               <MenuItem>Sign out</MenuItem>
             </MenuList>
           </Menu>

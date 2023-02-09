@@ -10,20 +10,23 @@ import {FaBed , FaBath} from 'react-icons/fa';
 
 const Property = (
     {property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID}}) => (
-    <Link  href={`/property/${externalID}`} passHref>
         <Flex flexWrap="wrap" flexDirection="column" overflow="hidden" m="2" paddingTop="0" justifyContent="flex-start" cursor="pointer">
+            <Link  href={`/property/${externalID}`} passHref>
             <Box me="4" >
                 <Image src={coverPhoto ? coverPhoto.url:DefualtImage} width="400" height="200" alt="default house" />
             </Box>
+            </Link>
             <Box >
                 <Flex paddingTop="2" alignItems="center" justifyContent="space-between" >
                     <Flex alignItems="center">
                         <Box paddingRight="3" color="green.400">{isVerified && <GoVerified />}</Box>
                         <Text fontWeight="bold" fontSize="lg"> AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                     </Flex>
+                    <Link href={`/agencies`}>
                     <Box>
                         <Avatar size="sm" src={agency?.logo?.url} />
                     </Box>
+                    </Link>
 
                 </Flex>
                 <Flex alignItems="center" p="1" justifyContent="space-between" w="250" color="blue.400">
@@ -34,6 +37,6 @@ const Property = (
                 </Text>
             </Box>
         </Flex>
-    </Link>
+    
 )
 export default Property;

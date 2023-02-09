@@ -5,7 +5,7 @@ import {BsGridFill} from 'react-icons/bs';
 import {GoVerified} from 'react-icons/go';
 import millify from 'millify';
 import ImageScrollbar from '../../components/ImageScrollbar';
-
+import Link from 'next/link';
 
 import {baseUrl,fetchApi} from '../../utils/fetchApi';
 
@@ -17,7 +17,6 @@ const PropertyDetails = ({propertyDetails:
     return(
 <Box maxWidth="1000px" margin="auto" p="4">
         {photos && <ImageScrollbar data={photos} />}
-        
         <Box w="full" p="6" >
         <Box w='full'>
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
@@ -25,9 +24,9 @@ const PropertyDetails = ({propertyDetails:
             <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
             <Text fontWeight='bold' fontSize='lg'>AED {price}{rentFrequency && `/${rentFrequency}`}</Text>
           </Flex>
-          <Box>
+          <Link href={`/agencies`}>
             <Avatar size='sm' src={agency?.logo?.url}></Avatar>
-          </Box>
+          </Link>
         </Flex>
         <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='blue.400'>
           {rooms}
