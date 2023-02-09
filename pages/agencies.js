@@ -22,8 +22,8 @@ import Profile from '../components/Profile';
           <Grid templateColumns='repeat( auto-fit, minmax(300px, 1fr) )' gap={6}  >
         {agencies.map((company)=>{
           return(
-            <Center key={company.id}>
-            <Box
+            <Center>
+            <Box  key={company.id}
               maxW={'300px'}
               w={'full'}
               bg={useColorModeValue('white', 'gray.800')}
