@@ -24,7 +24,6 @@ import Profile from '../components/Profile';
             <Box key={index}
               maxW={'300px'}
               w={'full'}
-              bg={useColorModeValue('white', 'gray.800')}
               boxShadow={'2xl'}
               rounded={'md'}
               overflow={'hidden'}>
