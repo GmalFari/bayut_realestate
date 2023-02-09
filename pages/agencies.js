@@ -20,9 +20,8 @@ import Profile from '../components/Profile';
     return (
         <Box ms={['2px','50px','100px']} me={['2px','50px','100px']} >
           <Grid templateColumns='repeat( auto-fit, minmax(300px, 1fr) )' gap={6}  >
-        {agencies.map((company)=>(
-            <Center key={company.id}>
-            <Box 
+        {agencies.map((company,index)=>(
+            <Box key={index}
               maxW={'300px'}
               w={'full'}
               bg={useColorModeValue('white', 'gray.800')}
@@ -45,7 +44,6 @@ import Profile from '../components/Profile';
                     {company.name}
                   </Heading>
                 </Stack>
-
                 <Stack direction={'row'} justify={'center'} spacing={6}>
                   <Stack spacing={0} align={'center'}>
                     <Text fontWeight={600}>{company.agentsCount}</Text>
@@ -62,7 +60,7 @@ import Profile from '../components/Profile';
                 </Stack>
               </Box>
             </Box>
-            </Center>
+           
         
        ))}
         </Grid>
