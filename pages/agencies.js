@@ -20,7 +20,8 @@ import Profile from '../components/Profile';
         <Box ms={['2px','50px','100px']} me={['2px','50px','100px']} >
           <Grid templateColumns='repeat( auto-fit, minmax(300px, 1fr) )' gap={6}  >
         {agencies.map((company,index)=>(
-            <Box key={index}
+           <Box key={index}>
+           <Center key={index}> <Box 
               maxW={'300px'}
               w={'full'}
               bg={'white'}
@@ -59,6 +60,8 @@ import Profile from '../components/Profile';
                 </Stack>
               </Box>
             </Box>
+</Center>
+</Box>
            
         
        ))}
