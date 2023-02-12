@@ -9,6 +9,7 @@ import Main_search from "../components/MainSearch"
 import Property from '../components/Property';
 import noresult from '../assets/images/noresult.svg';
 import {baseUrl,fetchApi} from '../utils/fetchApi';
+import Autocomplete from '../components/AutoComplete';
 const Search = ({properties}) => {
     const [searchFilter,setSearchFilter] = useState(false);
     const router = useRouter();
@@ -30,6 +31,7 @@ const Search = ({properties}) => {
         <Icon paddingLeft="2" w="7" as={BsFilter} />
         </Flex>
         {searchFilter && <SearchFilter/>}
+        <Autocomplete />
         <Text fontSize="2xl" p="4" fontWeight="bold">
             properties {router.query.purpose}
         </Text>

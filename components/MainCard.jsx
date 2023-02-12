@@ -8,14 +8,13 @@ import {FaBed , FaBath} from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 const MainCard = (
-  
+
   {property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID,createdAt}}  
 
   ) => {
     const date = new Date(createdAt);
     const currentDate = new Date()
     const created = currentDate.getHours() - date.getHours();
-
   return (
     <Link href={`/property/${externalID}`} passHref>
      <Card minW="200px" maxW='sm' maxH="300px" >
@@ -31,7 +30,7 @@ const MainCard = (
          borderRadius="5px" padding="0 3px"
          fontSize="14px"
          >
-       <small >جديد-منذ {created} ساعة</small>
+       <small >جديد-منذ {created <=1 ?'ساعة واحده':`${created} ساعة`} </small>
    </Box>
      <Stack spacing='2'>
        <Box >
