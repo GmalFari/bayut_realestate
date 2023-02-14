@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const MAPBOX_TOKEN = "pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDBycDFqMTc0ZDNucGhpdmZ0a3MxMyJ9._kaDvAK72eaDHxAyfsuJbA"; // Set your mapbox token here
 
 export default function MyMap() {
-  const [viewport,setViewport] = useState({});
+  const [viewport,setViewport] = useState({longitude:-100,latitude:40});
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition((pos)=>{
       setViewport({
@@ -21,7 +21,7 @@ export default function MyMap() {
   console.log(viewport)
   return (
     <div style={{width:'100vw',height:'100vh'}}>
-      {viewport.latitude && viewport.longitude && (
+      {/* {viewport.latitude && viewport.longitude && ( */}
       <div style={{width:'100vw',height:'100vh'}}>
       <Map
       style={{width:'100vw',height:'100vh'}}
@@ -39,7 +39,7 @@ export default function MyMap() {
         />
       </Map>
       </div>
-    )}
+    {/* )} */}
         
 
     
