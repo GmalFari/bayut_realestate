@@ -10,8 +10,32 @@ import Property from '../components/Property';
 import noresult from '../assets/images/noresult.svg';
 import {baseUrl,fetchApi} from '../utils/fetchApi';
 import Autocomplete from '../components/AutoComplete';
+import Map, { GeolocateControl } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+export  function MyMap(){
+    return (
+      <div>
+        <Map
+          mapboxAccessToken="pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDBycDFqMTc0ZDNucGhpdmZ0a3MxMyJ9._kaDvAK72eaDHxAyfsuJbA"
+          initialViewState={{
+            longitude: -100,
+            latitude: 40,
+            zoom: 3.5,
+          }}
+          mapStyle="mapbox://styles/mapbox/streets-v11"
+        >
+          <GeolocateControl
+            positionOptions={{ enableHighAccuracy: true }}
+            trackUserLocation={true}
+          />
+        </Map>
+      </div>
+    );
+  }
 const Search = ({properties}) => {
     const [searchFilter,setSearchFilter] = useState(false);
+
     const router = useRouter();
   return (
     <Box>
@@ -31,7 +55,7 @@ const Search = ({properties}) => {
         <Icon paddingLeft="2" w="7" as={BsFilter} />
         </Flex>
         {searchFilter && <SearchFilter/>}
-        <Autocomplete />
+        <MyMap />
         <Text fontSize="2xl" p="4" fontWeight="bold">
             properties {router.query.purpose}
         </Text>
