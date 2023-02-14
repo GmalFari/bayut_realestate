@@ -1,19 +1,22 @@
 
 import {Flex,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button} from '@chakra-ui/react';
-import {FaBed,FaBath} from 'react-icons/fa';
+import {FaBed,FaBath,FaMap} from 'react-icons/fa';
 import {BsGridFill} from 'react-icons/bs';
 import {GoVerified} from 'react-icons/go';
 import millify from 'millify';
 import ImageScrollbar from '../../components/ImageScrollbar';
 import Link from 'next/link';
+import {useState, createContext } from 'react';
 
 import {baseUrl,fetchApi} from '../../utils/fetchApi';
-
+import MyMap from '../../components/Mymap';
 
 const PropertyDetails = ({propertyDetails:
     {price,rentFrequency,rooms,purpose
     ,title,description,baths,area,agency,
-    isVerified,type,photos,amenities,furnishingStatus}})=>{
+    isVerified,type,photos,amenities,furnishingStatus,geography}})=>{
+
+    const [toggleMap,setToggleMap ] = useState(true)
     return(
 <Box maxWidth="1000px" margin="auto" p="4">
         {photos && <ImageScrollbar data={photos} />}
@@ -30,7 +33,8 @@ const PropertyDetails = ({propertyDetails:
         </Flex>
         <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='blue.400'>
           {rooms}
-          <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
+          <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />  |{toggleMap ? 
+          <Button onClick={()=>{setToggleMap(!toggleMap)}} ><FaMap  /></Button>  : <MyMap geoDetail={geography} />}
         </Flex>
       </Box>
             <Box marginTop="2">

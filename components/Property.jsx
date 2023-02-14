@@ -9,7 +9,7 @@ import { Avatar } from "@chakra-ui/react";
 import {FaBed , FaBath} from 'react-icons/fa';
 
 const Property = (
-    {property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID}}) => (
+    {property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID,geography}}) => (
         <Flex flexWrap="wrap" flexDirection="column" overflow="hidden" m="2" paddingTop="0" justifyContent="flex-start" cursor="pointer">
             <Link  href={`/property/${externalID}`} passHref>
             <Box me="4" >

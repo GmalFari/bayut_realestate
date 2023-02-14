@@ -3,24 +3,23 @@ import Head from 'next/head';
 import Map, {Marker} from 'react-map-gl';
 import { GeolocateControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { useState, useEffect } from "react";
-const MAPBOX_TOKEN = "pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDBycDFqMTc0ZDNucGhpdmZ0a3MxMyJ9._kaDvAK72eaDHxAyfsuJbA"; // Set your mapbox token here
-
-export default function MyMap() {
-  const [viewport,setViewport] = useState({longitude:-100,latitude:40});
+import { useState, useEffect,useContext } from "react";
+const MAPBOX_TOKEN = "pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDAwZWlhMTM5OTN3b2F0YnVscHFoYSJ9.N_J3cEVw10zYYVBGf3dMmg"; // Set your mapbox token here
+export default function MyMap({geoDetail}) {
+    const {lat,lng} = {...geoDetail}
+  const [viewport,setViewport] = useState({latitude:lat,longitude:lng});
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition((pos)=>{
       setViewport({
         ...viewport,
-        latitude:pos.coords.latitude,
-        longitude:pos.coords.longitude,
+        latitude:viewport.latitude,
+        longitude:viewport.longitude,
         zoom:3.5
       })
     })
   },[])
-  console.log(viewport)
   return (
-    <div style={{width:'100vw',height:'100vh'}}>
+    <div style={{width:'400px',height:"400px"}}>
       {/* {viewport.latitude && viewport.longitude && ( */}
       <div style={{width:'100vw',height:'100vh'}}>
       <Map
@@ -28,14 +27,14 @@ export default function MyMap() {
         mapboxAccessToken={MAPBOX_TOKEN}
         initialViewState={viewport}
         mapStyle="mapbox://styles/mapbox/streets-v11"
-      >
+        >
       <Marker
               longitude={viewport.longitude}
               latitude={viewport.latitude}
             />
-             <GeolocateControl
-          positionOptions={{ enableHighAccuracy: true }}
-          trackUserLocation={true}
+            <GeolocateControl
+            getCurrentPosition={viewport}
+            positionOptions={viewport}
         />
       </Map>
       </div>

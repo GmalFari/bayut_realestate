@@ -4,9 +4,12 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Layout from '../components/Layout';
 import "nprogress/nprogress.css";
 import NProgress  from "nprogress";
-import { useEffect } from "react";
+import { useEffect,createContext } from "react";
 
 import "./carousel.scss";
+
+const mapContext = createContext()
+
 function MyApp({Component,pageProps,router}){
     useEffect(() => {
         const handleRouteStart = () => NProgress.start();
