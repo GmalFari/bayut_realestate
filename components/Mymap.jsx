@@ -5,6 +5,8 @@ import { GeolocateControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useState, useEffect,useContext } from "react";
 const MAPBOX_TOKEN = "pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDAwZWlhMTM5OTN3b2F0YnVscHFoYSJ9.N_J3cEVw10zYYVBGf3dMmg"; // Set your mapbox token here
+import "mapbox-gl/dist/mapbox-gl.css";
+
 const MyMap = ({geoDetail}) =>{
     const {lat,lng} = {...geoDetail}
   const [viewport,setViewport] = useState({latitude:lat,longitude:lng});
@@ -14,7 +16,7 @@ const MyMap = ({geoDetail}) =>{
         ...viewport,
         latitude:viewport.latitude,
         longitude:viewport.longitude,
-        zoom:3.5
+        zoom:7
       })
     })
   },[])
@@ -25,15 +27,20 @@ const MyMap = ({geoDetail}) =>{
       <Map
       style={{width:'100vw',height:'100vh'}}
         mapboxAccessToken={MAPBOX_TOKEN}
-        initialViewState={viewport}
+        initialViewState={{...viewport,zoom:14}}
+        getCurrentPosition={true}
         mapStyle="mapbox://styles/mapbox/streets-v11"
+        // zoom={4}
+        boxZoom={true}
+        center={[lng,lng]}
+        
         >
       <Marker
+    
               longitude={viewport.longitude}
               latitude={viewport.latitude}
             />
             <GeolocateControl
-            getCurrentPosition={viewport}
             positionOptions={viewport}
         />
       </Map>

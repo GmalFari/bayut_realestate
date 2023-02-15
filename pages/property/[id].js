@@ -21,23 +21,22 @@ import {
     ModalBody,
     ModalCloseButton,
   } from '@chakra-ui/react';
+
 import { relative } from 'path';
 
-  function BasicUsage({geography}) {
+function BasicUsage({geography}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'full']
-
     return (
-      <Box >
+      <Box width={'full'}>
         <Button onClick={onOpen}><FaMap/></Button>
   
         <Modal size={'full'} blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent>
-            <ModalBody>
+          <ModalContent width={'full'}>
+            <ModalBody width={'full'}>
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
               
-              <MyMap geoDetail={geography} />
+              <MyMap width={'full'} geoDetail={geography} />
             </ModalBody>
             <ModalFooter>
             </ModalFooter>
