@@ -7,9 +7,45 @@ import millify from 'millify';
 import ImageScrollbar from '../../components/ImageScrollbar';
 import Link from 'next/link';
 import {useState, createContext } from 'react';
-
+import { useDisclosure } from '@chakra-ui/react';
 import {baseUrl,fetchApi} from '../../utils/fetchApi';
 import MyMap from '../../components/Mymap';
+
+//popup window
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+  } from '@chakra-ui/react';
+import { relative } from 'path';
+
+  function BasicUsage({geography}) {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'full']
+
+    return (
+      <Box >
+        <Button onClick={onOpen}><FaMap/></Button>
+  
+        <Modal size={'full'} blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalBody>
+            <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
+              
+              <MyMap geoDetail={geography} />
+            </ModalBody>
+            <ModalFooter>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </Box>
+    )
+  }
 
 const PropertyDetails = ({propertyDetails:
     {price,rentFrequency,rooms,purpose
@@ -34,7 +70,8 @@ const PropertyDetails = ({propertyDetails:
         <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='blue.400'>
           {rooms}
           <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />  |{toggleMap ? 
-          <Button onClick={()=>{setToggleMap(!toggleMap)}} ><FaMap  /></Button>  : <MyMap geoDetail={geography} />}
+          <Button onClick={()=>{setToggleMap(!toggleMap)}} ></Button>  : <MyMap geoDetail={geography} />}
+          | <BasicUsage geography={geography} />
         </Flex>
       </Box>
             <Box marginTop="2">
