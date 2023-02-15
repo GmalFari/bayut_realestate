@@ -5,7 +5,7 @@ import { GeolocateControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useState, useEffect,useContext } from "react";
 const MAPBOX_TOKEN = "pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDAwZWlhMTM5OTN3b2F0YnVscHFoYSJ9.N_J3cEVw10zYYVBGf3dMmg"; // Set your mapbox token here
-export default function MyMap({geoDetail}) {
+const MyMap = ({geoDetail}) =>{
     const {lat,lng} = {...geoDetail}
   const [viewport,setViewport] = useState({latitude:lat,longitude:lng});
   useEffect(()=>{
@@ -45,3 +45,5 @@ export default function MyMap({geoDetail}) {
     </div>
   );
 }
+
+export default MyMap;
