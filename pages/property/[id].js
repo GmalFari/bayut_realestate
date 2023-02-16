@@ -1,7 +1,7 @@
 
-import {Flex,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button} from '@chakra-ui/react';
-import {FaBed,FaBath,FaMap} from 'react-icons/fa';
-import {BsGridFill} from 'react-icons/bs';
+import {Flex,Grid,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button} from '@chakra-ui/react';
+import {FaBed,FaBath,FaMapMarked,FaYoutube} from 'react-icons/fa';
+import {BsGridFill,} from 'react-icons/bs';
 import {GoVerified} from 'react-icons/go';
 import millify from 'millify';
 import ImageScrollbar from '../../components/ImageScrollbar';
@@ -27,19 +27,26 @@ import { relative } from 'path';
 function BasicUsage({geography}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-      <Box width={'full'}>
-        <Button onClick={onOpen}><FaMap/></Button>
-  
-        <Modal size={'full'} blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+      <Box>
+        <Grid templateColumns='repeat(2, 1fr)' gap={6} >
+          <Box>
+          <Button  bg="#eef" borderRadius={50}  paddingRight='3' color='blue.400' onClick={onOpen}>
+                  <FaMapMarked  /> <small style={{padding:"5px"}}  >عرض على الخريطة</small></Button>
+          </Box>
+          <Box>
+          <Button bg="#eef" borderRadius={50}  paddingRight='3' color='blue.400' onClick={onOpen}>
+              <FaYoutube  /> <small style={{padding:"5px"}}>
+                فيديو</small>
+        </Button>
+          </Box>
+        </Grid>
+        <Modal size={"full"} blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent width={'full'}>
-            <ModalBody width={'full'}>
+          <ModalContent minW="100%" w="100%">
+            <ModalBody>
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
-              
-              <MyMap width={'full'} geoDetail={geography} />
+              <MyMap geoDetail={geography} />
             </ModalBody>
-            <ModalFooter>
-            </ModalFooter>
           </ModalContent>
         </Modal>
       </Box>
@@ -57,6 +64,9 @@ const PropertyDetails = ({propertyDetails:
         {photos && <ImageScrollbar data={photos} />}
         <Box w="full" p="6" >
         <Box w='full'>
+        <Flex>
+            <BasicUsage geography={geography} />
+          </Flex>
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
           <Flex alignItems='center'>
             <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
@@ -66,13 +76,13 @@ const PropertyDetails = ({propertyDetails:
             <Avatar size='sm' src={agency?.logo?.url}></Avatar>
           </Link>
         </Flex>
-        <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='blue.400'>
+        <Flex  w={250} alignItems='center' p='1' justifyContent='space-between'  color='blue.400'>
           {rooms}
-          <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />  |
+          <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />  
           {/* {toggleMap ? 
           <Button onClick={()=>{setToggleMap(!toggleMap)}} ></Button> 
            : <MyMap geoDetail={geography} />} */}
-          | <BasicUsage geography={geography} />
+        
         </Flex>
       </Box>
             <Box marginTop="2">
