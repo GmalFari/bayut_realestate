@@ -48,7 +48,7 @@ export function BasicUsage({coverPhoto,geography,photos}) {
           <ModalContent  width="100%">
             <ModalBody ps={0} pe={0}>
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
-            // This video will have equal sides
+              <ModalHeader >فيديو </ModalHeader>
               <AspectRatio  ratio={1}>
                 <iframe
                   title='naruto'
