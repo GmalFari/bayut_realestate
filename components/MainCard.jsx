@@ -15,15 +15,17 @@ const MainCard = (
     const date = new Date(createdAt);
     const currentDate = new Date()
     const created = currentDate.getHours() - date.getHours();
-    let checkCreated = '';
-    if(created == 1) {
-      checkCreated = 'ساعة واحده'
-    } else if (created == 2){
-      checkCreated='ساعتين';
-    } else if (created <= 10) {
-      checkCreated = `${created} ساعات`
-    }else if (created > 10) {
-      checkCreated = `${created} ساعة`
+    const checkCreatedFunc = created =>{
+      let checkCreated = '';
+      if(created == 1) {
+        return checkCreated = 'ساعة واحده'
+      } else if (created == 2){
+       return  checkCreated='ساعتين';
+      } else if (created <= 10) {
+       return  checkCreated = `${created} ساعات`
+      }
+      return  checkCreated = `${created} ساعة`
+      
     }
   return (
     <Link href={`/property/${externalID}`} passHref>
@@ -40,7 +42,7 @@ const MainCard = (
          borderRadius="5px" padding="0 3px"
          fontSize="14px"
          >
-       <small >جديد-منذ {checkCreated} </small>
+       <small >جديد-منذ {checkCreatedFunc(created)} </small>
    </Box>
      <Stack spacing='2'>
        <Box >

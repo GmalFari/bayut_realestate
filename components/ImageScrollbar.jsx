@@ -1,8 +1,8 @@
 import React from 'react'
 import { useContext } from 'react'
 import Image from 'next/image'
-import { Img } from '@chakra-ui/react';
-import {Box,Icon,Flex} from '@chakra-ui/react';
+import { AspectRatio, Img } from '@chakra-ui/react';
+import {Box,Icon,Flex,Grid} from '@chakra-ui/react';
 import { ScrollMenu , VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { FaArrowAltCircleLeft,FaArrowAltCircleRight, FaArrowCircleRight } from 'react-icons/fa';
 import { useState,useEffect,useRef } from 'react';
@@ -35,33 +35,38 @@ const RightArrow = () =>{
     )
 }
 
-const ImageScrollbar = ({data}) => {
-    const [defaultImg, setDefaultImg] = useState(data[0].url);
+const ImageScrollbar = ({data,coverPhoto}) => {
+     data = [...data,coverPhoto]
+    console.log(data.length )
+    const [defaultImg, setDefaultImg] = useState(coverPhoto.url);
     const [imgWH ,setImgWH] =useState({width:"100%",
                                         height:"700px"})
     const imageRef = useRef()
     useEffect(()=>{
         if (imageRef){
-           {imageRef.current.clientHeight  <= 700 ? setImgWH({width:"100%",
-                                                                    height:imageRef.current.clientHeight}):
-                                                                    {width:"100%",height:"700px",}
+           {imageRef.current.clientHeight  
+            <= 700 ? setImgWH({width:"100%",
+            height:imageRef.current.clientHeight}):
+             {width:"100%",height:"700px",}
            }
 
         }
     },[defaultImg])
   return (
-       <>
-        <Box borderRadius="10px" width={imgWH.width} maxH={imgWH.height}   overflow={imgWH.height< 500?"hidden":"scroll"} textAlign="center">
-        <Img src={defaultImg} width="auto " height="auto" ref={imageRef}  alt="" objectFit="contain"  />
+    <>
+        <Box overflow={"hidden"}  pt={"10%"} borderRadius="2px"   
+                textAlign="center">
+            <AspectRatio>
+            <Img src={defaultImg} width="auto" height="auto" overflow="hidden" ref={imageRef}  alt="" objectFit="cover"  />
+            </AspectRatio>
         </Box>
-         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} style={{overflow:"hidden"}}>
+        <ScrollMenu position={'initial'} LeftArrow={LeftArrow} RightArrow={RightArrow} style={{overflow:"scroll"}}>
         {data.map((item) =>(
             <Box       
                     border={item.url === defaultImg?"4px solid #127578":"none"}
                     onClick={()=>{setDefaultImg(item.url)}} 
                     key={item.id} width="100px" height="100px" itemID={item.id} overflow="hidden" p="1">
                 <Img
-                
                 placeholder='blur' 
                 // blurDataURL={item.url} 
                 src={item.url} 
@@ -73,8 +78,8 @@ const ImageScrollbar = ({data}) => {
             </Box>
             
         ))}
-    </ScrollMenu>
-       </>
+        </ScrollMenu>
+        </>
   )
 }
 
