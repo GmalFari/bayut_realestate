@@ -4,7 +4,7 @@ import {FaBed,FaBath,FaMapMarked,FaYoutube,FaImages} from 'react-icons/fa';
 import MyMap from "./Mymap";
 import ImageScrollbar from './ImageScrollbar';
 //popup window
-import { useDisclosure } from '@chakra-ui/react';
+import { useDisclosure,AspectRatio } from '@chakra-ui/react';
 import {
     Modal,
     ModalOverlay,
@@ -37,7 +37,7 @@ export function BasicUsage({coverPhoto,geography,photos}) {
           <ModalContent>
        
           <ModalHeader textAlign={"center"} >عرض العقارات على الخريطة</ModalHeader>
-            <ModalBody ps={0} width="100%" minW="100%">
+            <ModalBody ps={0} pe={0} width="100%" minW="100%">
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
               <MyMap geoDetail={geography} />
             </ModalBody>
@@ -46,16 +46,23 @@ export function BasicUsage({coverPhoto,geography,photos}) {
         <Modal size={'full'}    blockScrollOnMount={false} isOpen={isVideoOpen} onClose={onVideoClose}>
           <ModalOverlay />
           <ModalContent  width="100%">
-            <ModalBody ps={0}>
+            <ModalBody ps={0} pe={0}>
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
-              {/* <MyMap geoDetail={geography} /> */}
+            // This video will have equal sides
+              <AspectRatio  ratio={1}>
+                <iframe
+                  title='naruto'
+                  src='https://www.youtube.com/embed/WkflInhRuqE'
+                  allowFullScreen
+                />
+              </AspectRatio>
             </ModalBody>
           </ModalContent>
         </Modal>
         <Modal p="0" placement="top-end"  size={"full"} blockScrollOnMount={false} isOpen={isPictureOpen} onClose={onPictureClose}>
           <ModalOverlay />
           <ModalContent bg={"black.800"} w="100%" >
-            <ModalBody ps={0}>
+            <ModalBody pe={0} ps={0}>
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
             {photos && <ImageScrollbar coverPhoto={coverPhoto} data={photos} />}
             </ModalBody>
