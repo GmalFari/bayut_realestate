@@ -22,7 +22,7 @@ const PropertyDetails = ({propertyDetails:
             <BasicUsage coverPhoto={coverPhoto} photos={photos}  geography={geography} />
           </Flex>
           <Box position={'relative'}>
-          <Flex bg='#eee' position={'absolute'} bottom={0} mb={2} justifyContent={'left'} templateColumns='repeat(3, 1fr)' gap={2} >
+          <Flex bg='rgba(255,255,255,0.8)' position={'absolute'} bottom={0} mb={2} justifyContent={'left'} templateColumns='repeat(3, 1fr)' gap={2} >
                 <MainBtn icon={<FaShare fontWeight={'bold'} color='#006169' />}  color={'#fff'} />
                 <MainBtn icon={<FaRegHeart fontWeight={'bold'} color='#006169' />} color={'#fff'}  />
                 <MainBtn icon={<FaDownload fontWeight={'bold'} color='#006169' />} color={'#fff'}  />
@@ -54,8 +54,8 @@ const PropertyDetails = ({propertyDetails:
             <Text fontSize="lg" marginBottom="2" fontWeight="bold">
                 {title}
             </Text>
-            <Box bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
-            <Grid   mb={2} templateColumns='repeat(3, 1fr)' gap={2} >
+            <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
+            <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
                 <MainBtn icon={<FaWhatsapp fontWeight={'bold'} color='#006169' />} bgcolor={'#28b16d'} color={'#fff'} content={'وتس أب'} />
                 <MainBtn icon={<FaEnvelope fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'الإيميل'} />
                 <MainBtn icon={<FaPhone fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'إتصال'} />
