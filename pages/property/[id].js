@@ -54,8 +54,8 @@ const PropertyDetails = ({propertyDetails:
             <Text fontSize="lg" marginBottom="2" fontWeight="bold">
                 {title}
             </Text>
-            <Box position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
-            <Grid  bg='#fff' mb={2} templateColumns='repeat(3, 1fr)' gap={2} >
+            <Box bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
+            <Grid   mb={2} templateColumns='repeat(3, 1fr)' gap={2} >
                 <MainBtn icon={<FaWhatsapp fontWeight={'bold'} color='#006169' />} bgcolor={'#28b16d'} color={'#fff'} content={'وتس أب'} />
                 <MainBtn icon={<FaEnvelope fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'الإيميل'} />
                 <MainBtn icon={<FaPhone fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'إتصال'} />
