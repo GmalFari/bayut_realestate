@@ -81,12 +81,12 @@ export function BasicUsage({coverPhoto,geography,photos}) {
         </Modal>
         <Modal p="0" placement="top-end"  size={"full"} blockScrollOnMount={false} isOpen={isPictureOpen} onClose={onPictureClose}>
           <ModalOverlay />
-          <ModalContent bg={"black.800"} w="100%" >
+          <ModalContent  w="100%" >
             <ModalBody pe={0} ps={0}>
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
             {photos && <ImageScrollbar coverPhoto={coverPhoto} data={photos} />}
             </ModalBody>
-          </ModalContent>
+ 
 <ModalFooter>
             <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
             <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
@@ -96,6 +96,7 @@ export function BasicUsage({coverPhoto,geography,photos}) {
             </Grid>
             </Box>
           </ModalFooter>
+</ModalContent>
         </Modal>
       </Box>
     )
