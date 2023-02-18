@@ -1,6 +1,7 @@
 import {Flex,Grid,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button,
      PopoverHeader,Center} from '@chakra-ui/react';
 import {FaBed,FaBath,FaMapMarked,FaYoutube,FaImages} from 'react-icons/fa';
+import {FaWhatsapp,FaEnvelope,FaPhone,FaShare,FaDownload,FaRegHeart} from 'react-icons/fa'
 import MyMap from "./Mymap";
 import ImageScrollbar from './ImageScrollbar';
 import MainBtn from './MainBtn';
