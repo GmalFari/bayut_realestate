@@ -22,7 +22,7 @@ const PropertyDetails = ({propertyDetails:
             <BasicUsage coverPhoto={coverPhoto} photos={photos}  geography={geography} />
           </Flex>
           <Box position={'relative'}>
-          <Flex bg='#fff' position={'absolute'} bottom={0} mb={2} justifyContent={'left'} templateColumns='repeat(3, 1fr)' gap={2} >
+          <Flex bg='#eee' position={'absolute'} bottom={0} mb={2} justifyContent={'left'} templateColumns='repeat(3, 1fr)' gap={2} >
                 <MainBtn icon={<FaShare fontWeight={'bold'} color='#006169' />}  color={'#fff'} />
                 <MainBtn icon={<FaRegHeart fontWeight={'bold'} color='#006169' />} color={'#fff'}  />
                 <MainBtn icon={<FaDownload fontWeight={'bold'} color='#006169' />} color={'#fff'}  />
