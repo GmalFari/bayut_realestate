@@ -3,6 +3,7 @@ import {Flex,Grid,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button,
 import {FaBed,FaBath,FaMapMarked,FaYoutube,FaImages} from 'react-icons/fa';
 import MyMap from "./Mymap";
 import ImageScrollbar from './ImageScrollbar';
+import MainBtn from './MainBtn';
 //popup window
 import { useDisclosure,AspectRatio } from '@chakra-ui/react';
 import {
@@ -41,6 +42,15 @@ export function BasicUsage({coverPhoto,geography,photos}) {
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg='#006169'  />
               <MyMap geoDetail={geography} />
             </ModalBody>
+          <ModalFooter>
+            <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
+            <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
+                <MainBtn icon={<FaWhatsapp fontWeight={'bold'} color='#006169' />} bgcolor={'#28b16d'} color={'#fff'} content={'وتس أب'} />
+                <MainBtn icon={<FaEnvelope fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'الإيميل'} />
+                <MainBtn icon={<FaPhone fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'إتصال'} />
+            </Grid>
+            </Box>
+          </ModalFooter>
           </ModalContent>
         </Modal>
         <Modal size={'full'}    blockScrollOnMount={false} isOpen={isVideoOpen} onClose={onVideoClose}>
@@ -57,6 +67,15 @@ export function BasicUsage({coverPhoto,geography,photos}) {
                 />
               </AspectRatio>
             </ModalBody>
+<ModalFooter>
+            <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
+            <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
+                <MainBtn icon={<FaWhatsapp fontWeight={'bold'} color='#006169' />} bgcolor={'#28b16d'} color={'#fff'} content={'وتس أب'} />
+                <MainBtn icon={<FaEnvelope fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'الإيميل'} />
+                <MainBtn icon={<FaPhone fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'إتصال'} />
+            </Grid>
+            </Box>
+          </ModalFooter>
           </ModalContent>
         </Modal>
         <Modal p="0" placement="top-end"  size={"full"} blockScrollOnMount={false} isOpen={isPictureOpen} onClose={onPictureClose}>
@@ -67,6 +86,15 @@ export function BasicUsage({coverPhoto,geography,photos}) {
             {photos && <ImageScrollbar coverPhoto={coverPhoto} data={photos} />}
             </ModalBody>
           </ModalContent>
+<ModalFooter>
+            <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
+            <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
+                <MainBtn icon={<FaWhatsapp fontWeight={'bold'} color='#006169' />} bgcolor={'#28b16d'} color={'#fff'} content={'وتس أب'} />
+                <MainBtn icon={<FaEnvelope fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'الإيميل'} />
+                <MainBtn icon={<FaPhone fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'إتصال'} />
+            </Grid>
+            </Box>
+          </ModalFooter>
         </Modal>
       </Box>
     )
