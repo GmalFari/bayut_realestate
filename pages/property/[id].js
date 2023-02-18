@@ -1,6 +1,6 @@
 
 import {Flex,Grid,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button} from '@chakra-ui/react';
-import {FaBed,FaBath,FaMapMarked,FaYoutube,FaImages} from 'react-icons/fa';
+import {FaBed,FaBath,FaImages,FaWhatsapp,FaEnvelope,FaPhone,FaShare,FaDownload,FaRegHeart} from 'react-icons/fa';
 import { Img } from '@chakra-ui/react';
 import {BsGridFill} from 'react-icons/bs';
 import {GoVerified} from 'react-icons/go';
@@ -10,6 +10,7 @@ import Link from 'next/link';
 import {useState, createContext } from 'react';
 import {baseUrl,fetchApi} from '../../utils/fetchApi';
 import { BasicUsage } from '../../components/BasicUsage';
+import MainBtn from '../../components/MainBtn';
 const PropertyDetails = ({propertyDetails:
     {coverPhoto,price,rentFrequency,rooms,purpose
     ,title,description,baths,area,agency,
@@ -20,8 +21,16 @@ const PropertyDetails = ({propertyDetails:
         <Flex>
             <BasicUsage coverPhoto={coverPhoto} photos={photos}  geography={geography} />
           </Flex>
-        {coverPhoto && <Img src={coverPhoto.url} width={"100%"} height={"100%"} />}
-        <Box w="full" p="6" >
+          <Box position={'relative'}>
+          <Flex position={'absolute'} bottom={0} mb={2} justifyContent={'left'} templateColumns='repeat(3, 1fr)' gap={2} >
+                <MainBtn icon={<FaShare fontWeight={'bold'} color='#006169' />}  color={'#fff'} />
+                <MainBtn icon={<FaRegHeart fontWeight={'bold'} color='#006169' />} color={'#fff'}  />
+                <MainBtn icon={<FaDownload fontWeight={'bold'} color='#006169' />} color={'#fff'}  />
+            </Flex>
+            {coverPhoto && <Img src={coverPhoto.url} width={"100%"} height={"100%"} />}
+          </Box>
+        <Box w="full" p="6">
+        
         <Box w='full'>
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
           <Flex alignItems='center'>
@@ -32,7 +41,7 @@ const PropertyDetails = ({propertyDetails:
             <Avatar size='sm' src={agency?.logo?.url}></Avatar>
           </Link>
         </Flex>
-        <Flex  w={250} alignItems='center' p='1' justifyContent='space-between'  color='blue.400'>
+        <Flex  w={250} alignItems='center' p='1' justifyContent='space-between'  color='#006169' >
           {rooms}
           <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />  
           {/* {toggleMap ? 
@@ -41,14 +50,21 @@ const PropertyDetails = ({propertyDetails:
         
         </Flex>
       </Box>
-            <Box marginTop="2">
+        <Box marginTop="2">
             <Text fontSize="lg" marginBottom="2" fontWeight="bold">
                 {title}
             </Text>
-            <Text lineHeight="2" color="gray.600">
-                {description }
-            </Text>
+            <Box position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
+            <Grid   mb={2} templateColumns='repeat(3, 1fr)' gap={2} >
+                <MainBtn icon={<FaWhatsapp fontWeight={'bold'} color='#006169' />} bgcolor={'#28b16d'} color={'#fff'} content={'وتس أب'} />
+                <MainBtn icon={<FaEnvelope fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'الإيميل'} />
+                <MainBtn icon={<FaPhone fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} content={'إتصال'} />
+            </Grid>
             </Box>
+            <Box lineHeight="2" color="gray.600">
+                {description }
+            </Box>
+        </Box>
             <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
                 <Flex justifyContent="space-between" w="400px"  borderBottom="1px" borderColor="gray.100" p="3">
                     <Text> Type</Text>

@@ -21,12 +21,12 @@ export function BasicUsage({coverPhoto,geography,photos}) {
   return (
       <Box width="100%" ms={5} me={5}>
         <Grid mb={2} templateColumns='repeat(3, 1fr)' gap={2} >
-        <Button color='blue.400' colorScheme='teal' variant='outline' onClick={onPictureOpen}>
+        <Button color='#006169'  colorScheme='teal' variant='outline' onClick={onPictureOpen}>
         <FaImages /> <small style={{padding:"5px"}}  >الصور</small>     
       </Button>
-          <Button colorScheme='teal' variant='outline' padding='1px' color='blue.400' onClick={onOpen}>
+          <Button  colorScheme='black' variant='outline' padding='1px' color='#006169'  onClick={onOpen}>
                 <FaMapMarked /> <small style={{padding:"5px"}}  >  الخريطة</small></Button>       
-          <Button colorScheme='teal' variant='outline'padding='2px' color='blue.400' onClick={onVideoOpen}>
+          <Button colorScheme='teal' variant='outline'padding='2px' color='#006169'  onClick={onVideoOpen}>
               <FaYoutube  /> <small style={{padding:"5px"}}>
                 فيديو</small>
         </Button>
@@ -38,7 +38,7 @@ export function BasicUsage({coverPhoto,geography,photos}) {
        
           <ModalHeader textAlign={"center"} >عرض العقارات على الخريطة</ModalHeader>
             <ModalBody ps={0} pe={0} width="100%" minW="100%">
-            <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
+            <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg='#006169'  />
               <MyMap geoDetail={geography} />
             </ModalBody>
           </ModalContent>
@@ -47,7 +47,7 @@ export function BasicUsage({coverPhoto,geography,photos}) {
           <ModalOverlay />
           <ModalContent  width="100%">
             <ModalBody ps={0} pe={0}>
-            <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg="blue.50" />
+            <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg='#006169'  />
               <ModalHeader >فيديو </ModalHeader>
               <AspectRatio  ratio={1}>
                 <iframe
