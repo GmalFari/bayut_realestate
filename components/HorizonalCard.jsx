@@ -33,8 +33,7 @@ const HorizonalCard = (
                 minH={[170,200]}
                  objectFit={'cover'}
                   alt="default house" />
-            <Horizontal property={property}/>
-        </Flex>
+                    </Flex>
 )
               }
 export default HorizonalCard;
