@@ -25,6 +25,10 @@ const Search = ({properties}) => {
     const usedCard =()=> <>HorizonalCard;</>
     const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
     const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
+    const mapH = [properties.map((property) =>
+          
+               <HorizonalCard toggleVerticalCard={toggleVerticalCard}  property={property} key={property.id} /> 
+                   )]
     useEffect(()=>{
       if(!toggleVerticalCard){
        //setToggleHorizonalCard(!toggleHorizonalCard);
@@ -72,11 +76,7 @@ const Search = ({properties}) => {
         </Text>
         </Flex>
         <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
-            {properties.map((property) =>
-          
-               <HorizonalCard toggleVerticalCard={toggleVerticalCard}  property={property} key={property.id} /> 
-                   )}
-    
+            {...mapH}
           </Flex>
         {properties.length === 0 && (
             <Flex justifyContent="center" alignItems="center" flexDirection="column" marginTop="5" marginBottom="5">
