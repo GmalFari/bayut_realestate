@@ -76,7 +76,7 @@ const Search = ({properties}) => {
         </Text>
         </Flex>
         <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
-            {...mapH}
+            {mapH}
           </Flex>
         {properties.length === 0 && (
             <Flex justifyContent="center" alignItems="center" flexDirection="column" marginTop="5" marginBottom="5">
