@@ -11,8 +11,9 @@ import { Avatar } from "@chakra-ui/react";
 import {FaBed , FaBath} from 'react-icons/fa';
 import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react";
 import MainBtn from "./MainBtn";
+import Horizontal from './Horizontal';
 const HorizonalCard = (
-    {property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => {
+    {property}) => {
       return (
       <Flex w={['95%','95%','700px','800px']} 
             height={[170,200]} 
@@ -32,7 +33,7 @@ const HorizonalCard = (
                 minH={[170,200]}
                  objectFit={'cover'}
                   alt="default house" />
-            
+            <Horizontal property={property}/>
         </Flex>
 )
               }
