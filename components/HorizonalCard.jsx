@@ -13,8 +13,7 @@ import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react"
 import MainBtn from "./MainBtn";
 import Property from './Property';
 import Horizontal from './Horizontal';
-const Horizontal =({property})=>(
-     
+
 const HorizonalCard = (
     {property}) => {
     
