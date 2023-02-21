@@ -22,7 +22,7 @@ const Search = ({properties}) => {
     const listproperties = []
     const [searchFilter,setSearchFilter] = useState(false);
     const router = useRouter();
-    const usedCard = HorizonalCard;
+    const usedCard =()=> <>HorizonalCard;</>
     const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
     const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
     useEffect(()=>{
