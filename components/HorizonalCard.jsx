@@ -14,8 +14,7 @@ import MainBtn from "./MainBtn";
 import Property from './Property';
 const HorizonalCard = (
     {toggleVerticalCard,property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => {
-      return (
-      <Flex w={['95%','95%','700px','800px']} 
+    const Horizontal =(<Flex w={['95%','95%','700px','800px']} 
             height={[170,200]} 
             border='1px solid #ddd'  
             flexWrap="nowrap" 
@@ -65,7 +64,9 @@ const HorizonalCard = (
                     </Link> */}
             </Grid>
             </Box>
-        </Flex>
+        </Flex>)  
+    return (
+      <></>
 )
               }
 export default HorizonalCard;
