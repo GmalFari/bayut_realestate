@@ -67,7 +67,7 @@ const HorizonalCard = ()=>(
         </Flex>)
      return (
       <Box>
-       // {HorizonalCard}
+       
      </Box>
 )
               }
