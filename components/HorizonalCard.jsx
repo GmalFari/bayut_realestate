@@ -16,7 +16,7 @@ const HorizonalCard = (
    {toggleVerticalCard, property}) => {
       return (
       <Box>
-        {toggleVerticalCard && <Horizontal property={property}/>}
+        {toggleVerticalCard ? <Horizontal property={property}/>:'not found'}
       </Box>
 )
               }
