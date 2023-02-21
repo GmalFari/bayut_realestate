@@ -11,8 +11,9 @@ import { Avatar } from "@chakra-ui/react";
 import {FaBed , FaBath} from 'react-icons/fa';
 import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react";
 import MainBtn from "./MainBtn";
+import Property from './Property';
 const HorizonalCard = (
-    {property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => {
+    {toggleVerticalCard,property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => {
       return (
       <Flex w={['95%','95%','700px','800px']} 
             height={[170,200]} 
@@ -42,7 +43,7 @@ const HorizonalCard = (
                     </Flex>
                 </Flex>
                 <Box display={"flex"}   fontSize={['sm','md']} alignItems="center" p="1" justifyContent="right" w="100%" color="#006169">
-                <Box display={"flex"} alignItems="center" ml={2}>  {rooms} <FaBed  /> </Box> 
+                <Box display={"flex"} alignItems="center" ml={2}>  {rooms} <FaBed  /> {toggleVerticalCard}</Box> 
                 <Box display={"flex"} alignItems="center" ml={2}>  {baths} <FaBath /> </Box>
                 <Box display={"flex"} alignItems="center" ml={2}>{millify(area)} sqft <BsGridFill/></Box>
                 </Box>
