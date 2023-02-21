@@ -26,7 +26,7 @@ const Search = ({properties}) => {
     const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
     useEffect(()=>{
       if(!toggleVerticalCard){
-       setToggleHorizonalCard(!toggleHorizonalCard);
+       //setToggleHorizonalCard(!toggleHorizonalCard);
       }
     },[toggleVerticalCard])
   return (
@@ -51,8 +51,8 @@ const Search = ({properties}) => {
         <Flex color={'#006169'} flexGrow={1} justifyContent={'right'} >
         <Icon 
             cursor={'pointer'} 
-            color={toggleHorizonalCard?'#006169':'#ddd'}
-             onClick={()=>{setToggleHorizonalCard(!toggleHorizonalCard)}} 
+            color={!toggleVerticalCard?'#006169':'#ddd'}
+             onClick={()=>{setToggleVerticalCard(!toggleVerticalCard)}} 
               ms={2} me={2}
              as={FaGripHorizontal}
               />
