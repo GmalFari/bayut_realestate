@@ -77,7 +77,7 @@ const Search = ({properties}) => {
            // if(toggleVerticalCard){
                  // return */}
                <HorizonalCard property={property} key={property.id} /> 
-                   )
+                   )}
          {/* //}   
              //return <Property property={property} key={property.id} /> 
            
