@@ -71,8 +71,8 @@ const Search = ({properties}) => {
         </Text>
         </Flex>
         <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
-            {toggleVerticalCard && {properties.map((property) =>
-            <HorizonalCard property={property} key={property.id} /> )}}
+             {properties.map((property) =>
+            {toggleVerticalCard && <HorizonalCard property={property} key={property.id} /> )}}
             
             // {!toggleVerticalCard &&{properties.map((property) =>
            // <Property property={property} key={property.id} /> )}}
