@@ -70,7 +70,7 @@ const HorizonalCard = (
     {toggleVerticalCard,property}) => {
     
     return (
-      <Box></Box>
+      <Box><Horizontal property={property}/></Box>
 )
               }
 export default HorizonalCard;
