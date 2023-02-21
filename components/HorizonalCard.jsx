@@ -13,10 +13,10 @@ import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react"
 import MainBtn from "./MainBtn";
 import Horizontal from './Horizontal';
 const HorizonalCard = (
-   { property}) => {
+   {toggleVerticalCard, property}) => {
       return (
       <Box>
-         <Horizontal property={property}/>
+        {toggleVerticalCard && <Horizontal property={property}/>}
       </Box>
 )
               }
