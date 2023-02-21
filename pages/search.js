@@ -28,7 +28,7 @@ const Search = ({properties}) => {
                <HorizonalCard   property={property} key={property.id} /> 
                    )];
     const listingsV = [properties.map((property) =>
-            <Property property={property} key={property.id} /> :
+            <Property property={property} key={property.id} />
                    )]
   return (
     <Box>
