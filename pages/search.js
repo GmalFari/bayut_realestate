@@ -22,6 +22,7 @@ const Search = ({properties}) => {
     const listproperties = []
     const [searchFilter,setSearchFilter] = useState(false);
     const router = useRouter();
+    const usedCard = HorizonalCard;
     const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
     const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
     useEffect(()=>{
@@ -73,11 +74,11 @@ const Search = ({properties}) => {
         <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
              {properties.map((property) =>{
             if(toggleVerticalCard){
-                  return <HorizonalCard property={property} key={property.id} /> )
+                  return <HorizonalCard property={property} key={property.id} /> 
                    }   
-             return <Property property={property} key={property.id} /> )
+             return <Property property={property} key={property.id} /> 
            
-                 }}
+                 })}
             
             // {!toggleVerticalCard &&{properties.map((property) =>
            // <Property property={property} key={property.id} /> )}}
