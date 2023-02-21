@@ -74,7 +74,7 @@ const Search = ({properties}) => {
         <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
             {properties.map((property) =>
           
-               <HorizonalCard property={property} key={property.id} /> 
+               <usedCard property={property} key={property.id} /> 
                    )}
     
           </Flex>
