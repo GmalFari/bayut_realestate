@@ -49,7 +49,7 @@ const HorizonalCard = (
                 <Text fontSize={["sm","md"]} >
                     {title_l1.length > 25? `${title_l1.substring(0,25)}...`:title_l1}
                 </Text>
-                <Flex display={'flex'}  pt={[1,2]} fontSize={['8px','sm','md']} color={'#006169'} >
+                <Flex display={'flex'}  pt={[1,2]} fontSize={['11px','sm','md']} color={'#006169'} >
                 <BsFillGeoAltFill />
                 {`${location[3]['name_l1']}`},
                 {`${location[2]['name_l1']}`},
