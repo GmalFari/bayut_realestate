@@ -37,7 +37,7 @@ const HorizonalCard = (
             <Box position={'relative'} w={[200,250]} flexGrow={1} >
                 <Flex paddingTop="2" alignItems="center" justifyContent="space-between" >
                     <Flex alignItems="center">
-                        <Box ms='3'  paddingRight="0" color="green.400">{isVerified &&  <GoVerified />}</Box>
+                        <Box   paddingRight="0" color="green.400">{isVerified &&  <GoVerified />}</Box>
                         <Text fontWeight="bold" fontSize="md"> AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                     </Flex>
                 </Flex>
@@ -47,9 +47,9 @@ const HorizonalCard = (
                 <Box display={"flex"} alignItems="center" ml={2}>{millify(area)} sqft <BsGridFill/></Box>
                 </Box>
                 <Text fontSize={["sm","md"]} >
-                    {title_l1.length > 30? `${title_l1.substring(0,30)}...`:title_l1}
+                    {title_l1.length > 25? `${title_l1.substring(0,25)}...`:title_l1}
                 </Text>
-                <Flex display={'flex'}  pt={[1,2]} fontSize="sm" color={'#006169'} >
+                <Flex display={'flex'}  pt={[1,2]} fontSize={['8px','sm','md']} color={'#006169'} >
                 <BsFillGeoAltFill />
                 {`${location[3]['name_l1']}`},
                 {`${location[2]['name_l1']}`},
