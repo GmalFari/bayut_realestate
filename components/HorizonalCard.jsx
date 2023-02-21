@@ -15,17 +15,9 @@ import Horizontal from './Horizontal';
 const HorizonalCard = (
     property) => {
       return (
-      <Flex w={['95%','95%','700px','800px']} 
-            height={[170,200]} 
-            border='1px solid #ddd'  
-            flexWrap="nowrap" 
-            flexDirection={["row"]}
-            overflow="hidden" m="2" 
-            paddingTop="0" 
-            justifyContent="flex-start" 
-            cursor="pointer">
-            
-                    </Flex>
+      <Box>
+         <Horizontal property={property}/>
+      </Box>
 )
               }
 export default HorizonalCard;
