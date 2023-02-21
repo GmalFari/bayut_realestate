@@ -42,20 +42,21 @@ const HorizonalCard = (
                         <Text fontWeight="bold" fontSize="md"> AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                     </Flex>
                 </Flex>
-                <Box display={"flex"}   fontSize={['sm','md']} alignItems="center" p="1" justifyContent="right" w="100%" color="#006169">
-                <Box display={"flex"} alignItems="center" ml={2}>  {rooms} <FaBed  /> </Box> 
-                <Box display={"flex"} alignItems="center" ml={2}>  {baths} <FaBath /> </Box>
-                <Box display={"flex"} alignItems="center" ml={2}>{millify(area)} sqft <BsGridFill/></Box>
-                </Box>
-                <Text fontSize={["sm","md"]} >
-                     {title_l1.length > 25? `${title_l1.substring(0,25)}...`:title_l1}
+                
+                <Text isTruncated fontSize={["sm","md"]} >
+                     {title_l1}
                 </Text>
-                <Flex display={'flex'}  pt={[1,2]} fontSize={['11px','sm','md']} color={'#006169'} >
+                <Flex isTruncated flexWrap='noWrap' display={'flex'}  pt={[1,2]} fontSize={['11px','sm','md']} color={'#006169'} >
                 <BsFillGeoAltFill />
                 {`${location[3]['name_l1']}`},
                 {`${location[2]['name_l1']}`},
                 {`${location[1]['name_l1']}`}
                 </Flex>
+<Box display={"flex"} flexWrap='noWrap'   fontSize={['sm','md']} alignItems="center" p="1" justifyContent="right" w="100%" color="#000">
+                <Box display={"flex"} alignItems="center" ml={2}>  {rooms} <FaBed  /> </Box> 
+                <Box display={"flex"} alignItems="center" ml={2}>  {baths} <FaBath /> </Box>
+                <Box display={"flex"} alignItems="center" ml={2}>{millify(area)} sqft <BsGridFill/></Box>
+                </Box>
                 <Grid width={'100%'} position={'absolute'} bottom={1}   templateColumns='repeat(3, 1fr)' gap={1} >
                 <MainBtn  icon={<FaWhatsapp fontSize={'sm'} content="whatsapp" fontWeight={'bold'}  color='white' />} bgcolor={'#28b16d'} color={'#fff'}  />
                 <MainBtn icon={<FaEnvelope fontSize={'sm'} fontWeight={'bold'} color='#28b16d' />} bgcolor={'#006169'} color={'#fff'} />
