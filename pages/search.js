@@ -26,17 +26,14 @@ const Search = ({properties}) => {
     const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
     const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
     const listingsH = [properties.map((property) =>
-               <HorizonalCard toggleVerticalCard={toggleVerticalCard}  property={property} key={property.id} /> 
+               <HorizonalCard   property={property} key={property.id} /> 
                    )];
-    const listingsV = [properties.map((property) =>
-               <Property toggleVerticalCard={toggleVerticalCard}  property={property} key={property.id} /> 
-                   )]
-    const [mapH,setMapH] = useState(listingsH)
-    useEffect(()=>{
-      {toggleVerticalCard?
-        setMapH(listingsH):setMapH(listingsV)
-      } 
-    },[toggleVerticalCard])
+    const listings = [properties.map((property) =>
+               {toggleVerticalCard?
+            <Property   property={property} key={property.id} /> :
+          <HorizonalCard   property={property} key={property.id} /> 
+                   
+                   })]
   return (
     <Box>
         <Flex
@@ -79,9 +76,7 @@ const Search = ({properties}) => {
         </Text>
         </Flex>
         <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
-            {toggleVerticalCard?
-          listingsH:listingsV
-      } 
+            {listings}
           </Flex>
         {properties.length === 0 && (
             <Flex justifyContent="center" alignItems="center" flexDirection="column" marginTop="5" marginBottom="5">
