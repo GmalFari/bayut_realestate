@@ -37,14 +37,14 @@ const HorizonalCard = (
             <Box position={'relative'} w={[200,250]} flexGrow={1} >
                 <Flex paddingTop="2" alignItems="center" justifyContent="space-between" >
                     <Flex alignItems="center">
-                        <Box paddingRight="3" color="green.400">{isVerified &&  <GoVerified />}</Box>
-                        <Text fontWeight="bold" fontSize="lg"> AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
+                        <Box ms='3'  paddingRight="0" color="green.400">{isVerified &&  <GoVerified />}</Box>
+                        <Text fontWeight="bold" fontSize="md"> AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                     </Flex>
                 </Flex>
-                <Box display={"flex"}   fontSize={'md'} alignItems="center" p="1" justifyContent="right" w="100%" color="#006169">
-                <Box display={"flex"} alignItems="center" ml={5}>  {rooms} <FaBed  /> </Box> 
-                <Box display={"flex"} alignItems="center" ml={5}>  {baths} <FaBath /> </Box>
-                <Box display={"flex"} alignItems="center" ml={5}>{millify(area)} sqft <BsGridFill/></Box>
+                <Box display={"flex"}   fontSize={['sm','md']} alignItems="center" p="1" justifyContent="right" w="100%" color="#006169">
+                <Box display={"flex"} alignItems="center" ml={2}>  {rooms} <FaBed  /> </Box> 
+                <Box display={"flex"} alignItems="center" ml={2}>  {baths} <FaBath /> </Box>
+                <Box display={"flex"} alignItems="center" ml={2}>{millify(area)} sqft <BsGridFill/></Box>
                 </Box>
                 <Text fontSize={["sm","md"]} >
                     {title_l1.length > 30? `${title_l1.substring(0,30)}...`:title_l1}
