@@ -1,42 +1,34 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image';
 import {Flex,Box,Text,Icon} from '@chakra-ui/react';
 import {BsFilter } from 'react-icons/bs'; 
 import SearchFilter from '../components/SearchFilter';
-import Main_search from "../components/MainSearch"
+import Main_search from "../components/MainSearch";
 import Property from '../components/Property';
+import HorizonalCard from "../components/HorizonalCard";
 import noresult from '../assets/images/noresult.svg';
 import {baseUrl,fetchApi} from '../utils/fetchApi';
 import Autocomplete from '../components/AutoComplete';
 import Map, { GeolocateControl } from "react-map-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import {GoKebabVertical } from 'react-icons/go';
+import { BsSortDown } from 'react-icons/bs';
+import {FaGripHorizontal,FaList} from 'react-icons/fa';
 
-export  function MyMap(){
-    return (
-      <div>
-        <Map
-          mapboxAccessToken="pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDBycDFqMTc0ZDNucGhpdmZ0a3MxMyJ9._kaDvAK72eaDHxAyfsuJbA"
-          initialViewState={{
-            longitude: -100,
-            latitude: 40,
-            zoom: 3.5,
-          }}
-          mapStyle="mapbox://styles/mapbox/streets-v11"
-        >
-          <GeolocateControl
-            positionOptions={{ enableHighAccuracy: true }}
-            trackUserLocation={true}
-          />
-        </Map>
-      </div>
-    );
-  }
+import "mapbox-gl/dist/mapbox-gl.css"
+
 const Search = ({properties}) => {
+    const listproperties = []
     const [searchFilter,setSearchFilter] = useState(false);
-
     const router = useRouter();
+    const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
+    const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
+    useEffect(()=>{
+      if(toggleVerticalCard){
+        
+      }
+    },[toggleVerticalCard])
   return (
     <Box>
         <Flex
@@ -51,16 +43,36 @@ const Search = ({properties}) => {
         alignItems="center"
         onClick={() => setSearchFilter(!searchFilter)}
         >
-        <Text  > Search properties by filter </Text>
+        <Text> Search properties by filter </Text>
         <Icon paddingLeft="2" w="7" as={BsFilter} />
         </Flex>
         {searchFilter && <SearchFilter/>}
-        <MyMap />
-        <Text fontSize="2xl" p="4" fontWeight="bold">
+        <Flex justifyContent={'space-between'} fontSize={['md','xl','xl','2xl']} p="4" fontWeight="bold">
+        <Flex color={'#006169'} flexGrow={1} justifyContent={'right'} >
+        <Icon 
+            cursor={'pointer'} 
+            color={toggleHorizonalCard?'#006169':'#ddd'}
+             onClick={()=>{setToggleHorizonalCard(!toggleHorizonalCard)}} 
+              ms={2} me={2}
+             as={FaGripHorizontal}
+              />
+              <Icon
+                cursor={'pointer'} 
+            color={toggleVerticalCard?'#006169':'#ddd'}
+             onClick={()=>{setToggleVerticalCard(!toggleVerticalCard)}} 
+              ms={2} me={2}
+                 as={FaList}/>
+               <Icon as={BsSortDown}/> 
+             
+
+        </Flex>
+        <Text>
             properties {router.query.purpose}
         </Text>
-        <Flex  flexWrap="wrap" justifyContent="center" alignItems="center" >
-            {properties.map((property) =><Property property={property} key={property.id} />)}
+        </Flex>
+        <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
+            {properties.map((property) =>
+            <HorizonalCard property={property} key={property.id} /> )}
         </Flex>
         {properties.length === 0 && (
             <Flex justifyContent="center" alignItems="center" flexDirection="column" marginTop="5" marginBottom="5">

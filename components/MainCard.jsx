@@ -4,13 +4,11 @@ import Image from 'next/image';
 import image from "../assets/images/img1.jpg";
 import {Divider,Avatar,CardBody,Flex,ButtonGroup,Button,Text, Card,Stack, CardFooter,Heading, Box } from '@chakra-ui/react'
 import millify from 'millify';
-import {FaBed , FaBath} from 'react-icons/fa';
+import {FaBed , FaBath,FaGripHorizontal} from 'react-icons/fa';
 import { BsGridFill } from 'react-icons/bs';
-import { GoVerified } from 'react-icons/go';
+import { GoVerified,GoKebabVertical } from 'react-icons/go';
 const MainCard = (
-
   {property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID,createdAt}}  
-
   ) => {
     const date = new Date(createdAt);
     const currentDate = new Date()
@@ -66,7 +64,9 @@ const MainCard = (
        </Stack>
    </CardBody>
    <Divider />
+ 
  </Card>
+ 
     </Link>
   )
 }

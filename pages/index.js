@@ -10,7 +10,7 @@ import Carousel from '../components/Carousel';
 import Rent from "../assets/images/Rent_a_home.webp";
 import Sell from "../assets/images/Sell_a_home.webp";
 import Buy from "../assets/images/Buy_a_home.webp";
-
+import HorizonalCard from "../components/HorizonalCard";
 
 const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUrl }) => (
   <Flex  flexWrap="wrap" m="10">
@@ -41,8 +41,10 @@ export default function Home({propertiesForSale,propertiesForRent}) {
       <Box display="flex" flexFlow="row" flexWrap="nowrap" overflowY="hidden" overflowX="scroll">
       {propertiesForRent.map((property) => <MainCard  property={property} key={property.id} />)}
     </Box>
+    <Box display="flex" flexFlow="row" flexWrap="nowrap" overflowY="hidden" overflowX="scroll">
+    </Box>
       <Box display={['flex']} 
-         flexDirection={['column','column','column','row']}  
+         flexDirection={['column','column','column']}  
         justifyContent="center"
         alignItems="center"
         >

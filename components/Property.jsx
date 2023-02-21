@@ -7,13 +7,13 @@ import {GoVerified} from 'react-icons/go'
 import DefualtImage from '../assets/images/Default_img.jpg'
 import { Avatar } from "@chakra-ui/react";
 import {FaBed , FaBath} from 'react-icons/fa';
-
+import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react";
 const Property = (
     {property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID,geography}}) => (
         <Flex flexWrap="wrap" flexDirection="column" overflow="hidden" m="2" paddingTop="0" justifyContent="flex-start" cursor="pointer">
             <Link  href={`/property/${externalID}`} passHref>
             <Box me="4" >
-                <Image src={coverPhoto ? coverPhoto.url:DefualtImage} width="400" height="200" alt="default house" />
+                <Image src={coverPhoto ? coverPhoto.url:DefualtImage} width="300" height="200" alt="default house" />
             </Box>
             </Link>
             <Box >
@@ -37,6 +37,8 @@ const Property = (
                 </Text>
             </Box>
         </Flex>
+       
+
     
 )
 export default Property;
