@@ -19,5 +19,5 @@ const HorizonalCard = ()=>(
        
      </Box>
 )
-              }
+              
 export default HorizonalCard;
