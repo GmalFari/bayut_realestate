@@ -12,11 +12,11 @@ import {FaBed , FaBath} from 'react-icons/fa';
 import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react";
 import MainBtn from "./MainBtn";
 import Property from './Property';
-
-const Horizontal =({property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}})=>(
+import Horizontal from './Horizontal';
+const Horizontal =({property})=>(
      
 const HorizonalCard = (
-    {toggleVerticalCard,property}) => {
+    {property}) => {
     
     return (
       <Box><Horizontal property={property}/></Box>
