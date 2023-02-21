@@ -13,7 +13,7 @@ import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react"
 import MainBtn from "./MainBtn";
 import Horizontal from './Horizontal';
 const HorizonalCard = (
-    {property}) => {
+    property) => {
       return (
       <Flex w={['95%','95%','700px','800px']} 
             height={[170,200]} 
