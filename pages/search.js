@@ -25,8 +25,8 @@ const Search = ({properties}) => {
     const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
     const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
     useEffect(()=>{
-      if(toggleVerticalCard){
-        setToggleHorizonalCard(!toggleHorizonalCard);
+      if(!toggleVerticalCard){
+       setToggleHorizonalCard(!toggleHorizonalCard);
       }
     },[toggleVerticalCard])
   return (
