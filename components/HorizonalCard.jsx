@@ -18,7 +18,8 @@ const HorizonalCard = (
     {property}) => {
     
     return (
-      <Box><Horizontal property={property}/></Box>
+      <Box>
+            </Box>
 )
               }
 export default HorizonalCard;
