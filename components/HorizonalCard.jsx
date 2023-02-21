@@ -12,10 +12,11 @@ import {FaBed , FaBath} from 'react-icons/fa';
 import { Card,CardBody,CardFooter,Stack,Heading,Button } from "@chakra-ui/react";
 import MainBtn from "./MainBtn";
 import Property from './Property';
-const HorizonalCard = ()=>(
-    {property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => 
-      (<Flex
-        height={[170,200]} 
+const HorizonalCard = (
+    {toggleVerticalCard,property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => {
+      return (
+      <Flex w={['95%','95%','700px','800px']} 
+            height={[170,200]} 
             border='1px solid #ddd'  
             flexWrap="nowrap" 
             flexDirection={["row"]}
@@ -66,5 +67,5 @@ const HorizonalCard = ()=>(
             </Box>
         </Flex>
 )
-              
+              }
 export default HorizonalCard;
