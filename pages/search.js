@@ -19,20 +19,23 @@ import {FaGripHorizontal,FaList} from 'react-icons/fa';
 import "mapbox-gl/dist/mapbox-gl.css"
 
 const Search = ({properties}) => {
-    const listproperties = []
+    
     const [searchFilter,setSearchFilter] = useState(false);
     const router = useRouter();
     const usedCard =()=> <>HorizonalCard;</>
     const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
     const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
-    const mapH = [properties.map((property) =>
-          
+    const listingsH = [properties.map((property) =>
                <HorizonalCard toggleVerticalCard={toggleVerticalCard}  property={property} key={property.id} /> 
                    )]
+    const listingsV = [properties.map((property) =>
+               <Property toggleVerticalCard={toggleVerticalCard}  property={property} key={property.id} /> 
+                   )]
+    const [mapH,setMapH] = useState(listingsH)
     useEffect(()=>{
-      if(!toggleVerticalCard){
-       //setToggleHorizonalCard(!toggleHorizonalCard);
-      }
+      {toggleVerticalCard?
+        setMapH(listingsH):setMapH(listingsV)
+      } 
     },[toggleVerticalCard])
   return (
     <Box>
