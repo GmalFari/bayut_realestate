@@ -19,6 +19,7 @@ const HorizonalCard = (
     
     return (
       <Box>
+       <Horizontal property={property} />
             </Box>
 )
               }
