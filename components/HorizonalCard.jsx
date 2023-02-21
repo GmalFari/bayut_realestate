@@ -48,7 +48,7 @@ const HorizonalCard = (
                 <Box display={"flex"} alignItems="center" ml={2}>{millify(area)} sqft <BsGridFill/></Box>
                 </Box>
                 <Text fontSize={["sm","md"]} >
-                    {title_l1.length > 25? `${title_l1.substring(0,25)}...`:title_l1}
+                     {title_l1.length > 25? `${title_l1.substring(0,25)}...`:title_l1}
                 </Text>
                 <Flex display={'flex'}  pt={[1,2]} fontSize={['11px','sm','md']} color={'#006169'} >
                 <BsFillGeoAltFill />
