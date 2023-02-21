@@ -24,15 +24,7 @@ const HorizonalCard = (
             paddingTop="0" 
             justifyContent="flex-start" 
             cursor="pointer">
-            <Link  href={`/property/${externalID}`} passHref>
-            <Box  height={'100%'} me="4" >
-                <Img src={coverPhoto ? coverPhoto.url:DefualtImage.url} 
-                borderRadius={2}
-                width={[160,170,250]} 
-                height={[170,200]}
-                minH={[170,200]}
-                 objectFit={'cover'}
-                  alt="default house" />
+            
                     </Flex>
 )
               }
