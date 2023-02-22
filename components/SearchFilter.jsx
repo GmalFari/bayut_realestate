@@ -33,8 +33,10 @@ const SearchFilter = () => {
         setLoading(true);
         const data = await fetchApi(`{baseUrl}/auto-complete?query=Abu dhabi`)
         setLoading(data?.hits);
-      };
-      fetchData();
+        setLoading(false);
+        setLocationData(data?.hits);
+        fetchData();
+        };
     }
   },[searchTerm]);
   
