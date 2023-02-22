@@ -31,7 +31,7 @@ const SearchFilter = () => {
     if(searchTerm !== ''){
       const fetchData = async ()=>{
         setLoading(true);
-        const data = await fetchApi(`{baseUrl}/auto-complete?query=Abu dhabi`)
+        const data = await fetchApi(`{baseUrl}/auto-complete?query=`${searchTerm}`)
         setLoading(data?.hits);
         setLoading(false);
         setLocationData(data?.hits);
