@@ -99,6 +99,7 @@ export async function getServerSideProps({query}) {
     const areaMax = query.areaMax || '35000';
     const locationExternalIDs = query.locationExternalIDs || '5002';
     const categoryExternalID = query.categoryExternalID || '4'; 
+    const lang = query.lang || 'ar';
     const data = await fetchApi(`${baseUrl}/properties/list?
                     query=${query}
                     &locationExternalIDs=${locationExternalIDs}
@@ -110,7 +111,8 @@ export async function getServerSideProps({query}) {
                     roomsMin=${roomsMin}&
                     sort=${sort}&
                     areaMax=${areaMax}&
-                    categoryExternalID=${categoryExternalID}
+                    categoryExternalID=${categoryExternalID}&
+                    lang=${lang}
                     `);
 
                     return {
