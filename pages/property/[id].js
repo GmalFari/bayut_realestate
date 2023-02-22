@@ -62,7 +62,7 @@ const PropertyDetails = ({propertyDetails:
             </Grid>
             </Box>
             <Box lineHeight="2" color="gray.600">
-                {description_l1 }
+                {description_l1}
             </Box>
         </Box>
             <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
