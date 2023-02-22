@@ -13,7 +13,7 @@ import { BasicUsage } from '../../components/BasicUsage';
 import MainBtn from '../../components/MainBtn';
 const PropertyDetails = ({propertyDetails:
     {coverPhoto,price,rentFrequency,rooms,purpose
-    ,title_l1,description_l1,baths,area,agency,
+    ,title_l1,description,baths,area,agency,
     isVerified,type,photos,amenities,furnishingStatus,geography}})=>{
     const [toggleMap,setToggleMap ] = useState(true)
     return(
@@ -62,7 +62,7 @@ const PropertyDetails = ({propertyDetails:
             </Grid>
             </Box>
             <Box lineHeight="2" color="gray.600">
-                {description_l1}
+                {description}
             </Box>
         </Box>
             <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
