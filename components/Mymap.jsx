@@ -19,7 +19,7 @@ const MyMap = ({geoDetail}) =>{
         zoom:7
       })
     })
-  },[])
+  },[viewport])
   return (
     <div style={{width:'400px',height:"400px"}}>
       {/* {viewport.latitude && viewport.longitude && ( */}

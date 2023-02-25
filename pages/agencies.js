@@ -36,6 +36,7 @@ import Profile from '../components/Profile';
                   company.logo.url
                 }
                 objectFit={'fill'}
+                alt={'agencies image'}
               />
               </Link>
               <Box p={6}>
