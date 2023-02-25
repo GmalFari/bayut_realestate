@@ -33,7 +33,7 @@ const SearchFilter = () => {
         const data = await fetchApi(`{baseUrl}/auto-complete?query=${searchTerm}`)
         setLoading(data?.hits);
         setLoading(false);
-        setLocationData(data?.hits);
+        searchTerm(data?.hits);
         fetchData();
         };
     }

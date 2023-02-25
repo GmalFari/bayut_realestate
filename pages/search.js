@@ -51,7 +51,7 @@ const Search = ({properties}) => {
         <Flex justifyContent={'space-between'} fontSize={['md','xl','xl','2xl']} p="4" fontWeight="bold">
         <Flex color={'#006169'} flexGrow={1} justifyContent={'right'} >
         <Icon 
-            cursor={'pointer'} 
+            cursor={ 'pointer'} 
             color={!toggleVerticalCard?'#006169':'#ddd'}
              onClick={()=>{setToggleVerticalCard(!toggleVerticalCard)}} 
               ms={2} me={2}
@@ -83,7 +83,6 @@ const Search = ({properties}) => {
     </Box>
   )
 }
-
 
 export default Search
 
