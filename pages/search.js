@@ -100,9 +100,9 @@ export async function getServerSideProps({query}) {
     const categoryExternalID = query.categoryExternalID || '4'; 
     const lang = query.lang || 'ar';
     const data = await fetchApi(`${baseUrl}/properties/list?
-                    query=${query}
-                    &locationExternalIDs=${locationExternalIDs}
-                    &purpose=${purpose}&hitsPerPage=6&
+                    locationExternalIDs=${locationExternalIDs}
+                    &purpose=${purpose}
+                    &hitsPerPage=6&
                     rentFrequency=${rentFrequency}&
                     minPrice=${minPrice}&
                     maxPrice=${maxPrice}&
