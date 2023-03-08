@@ -388,7 +388,6 @@ const Form3 = () => {
           Email address
         </FormLabel>
         <Input id="email" type="email" />
-        <FormHelperText>We'll never share your email.</FormHelperText>
       </FormControl>
       <FormControl>
         <FormLabel htmlFor="password" fontWeight={'normal'} mt="2%">
