@@ -9,12 +9,12 @@ import yemenGis from "../utils/yemenGis.json"
 import gadm41_YEM_1 from "../utils/gadm41_YEM_1.json";
 
 const create = () => {
-  const [city , setCity] = useState("")
-  const [state , setState] = useState("")
-  const [typedata,setTypedata] = useState(typeProperty);
-  const [person,setPerson] = useState()
-  const [loading,setLoading] = useState(false)
-  const [allcountries,setAllcountries] = useState([])
+  // const [city , setCity] = useState("")
+  // const [state , setState] = useState("")
+  // const [typedata,setTypedata] = useState(typeProperty);
+  // const [person,setPerson] = useState()
+  // const [loading,setLoading] = useState(false)
+  // const [allcountries,setAllcountries] = useState([])
 //   const handleSubmit = async (event) => {
 
 //         // Stop the form from submitting and refreshing the page.
