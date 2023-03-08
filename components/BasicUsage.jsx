@@ -41,7 +41,7 @@ export function BasicUsage({coverPhoto,geography,photos}) {
           <ModalHeader textAlign={"center"} >عرض العقارات على الخريطة</ModalHeader>
             <ModalBody ps={0} pe={0} width="100%" minW="100%">
             <ModalCloseButton  position="fixed" zIndex="9999" top="10%" left="90%" bg='#006169'  />
-              <MyMap geoDetail={geography} />
+              <MyMap sizes={{mapW:"100vw",mapH:"100vh"}} geoDetail={geography} />
             </ModalBody>
           <ModalFooter>
             <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>

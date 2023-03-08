@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-
 import {
   Progress,
   Box,
@@ -8,6 +7,7 @@ import {
   Heading,
   Flex,
   FormControl,
+  Grid,
   GridItem,
   FormLabel,
   Input,
@@ -19,7 +19,7 @@ import {
   FormHelperText,
   InputRightElement,
 } from '@chakra-ui/react';
-
+import MyMap from './Mymap';
 import yemenGis from "../utils/yemenGis.json";
 import gadm41_YEM_1 from "../utils/gadm41_YEM_1.json";
 import {typeProperty} from "../utils/selectedData";
@@ -149,7 +149,7 @@ const Form1 = () => {
           id="city"
           name="city"
           autoComplete="city"
-          placeholder="            إسم المديرية"
+          placeholder="إسم المديرية"
           focusBorderColor="brand.400"
           shadow="sm"
           size="sm"
@@ -226,7 +226,7 @@ const Form2 = () => {
   return (
     <>
       <Heading w="100%" textAlign={'center'} fontWeight="normal">
-        Social Handles
+      بيانات العقار
       </Heading>
       <SimpleGrid columns={1} spacing={6}>
       <FormControl as={GridItem} colSpan={[6, 6, null, 2]}>
@@ -319,14 +319,33 @@ const Form3 = () => {
       <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
       وصف العقار
       </Heading>
-      <Flex>
-        <FormControl>
+      <FormControl>
+        <FormLabel htmlFor="password" fontWeight={'normal'} mt="2%">
+        </FormLabel>
+        <InputGroup size="md">
+          <Input
+            pr="4.5rem"
+            type={show ? 'text' : 'password'}
+            placeholder="Enter password"
+          />
+          <InputRightElement width="4.5rem">
+            <Button h="1.75rem" size="sm" onClick={handleClick}>
+              {show ? 'Hide' : 'Show'}
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+      </FormControl>
+      <Grid
+        templateColumns='repeat(auto-fit, minmax(150px, 1fr))'
+        gap={4}
+>
+    <Box width={["100%","fit-content"]}>
           <FormLabel htmlFor="space" fontWeight={'normal'}>
           المساحة بالمتر
           </FormLabel>
           <Input type="number" id="space" placeholder="المساحة" />
-        </FormControl>
-        <FormControl>
+        </Box>
+        <Box width={["100%","fit-content"]}>
         <FormLabel htmlFor="view" fontWeight={'normal'}>
           الإطلالة
           </FormLabel>
@@ -335,7 +354,7 @@ const Form3 = () => {
           id="typeProperty"
           name="typeProperty"
           autoComplete="typeProperty"
-          placeholder=" نوع العقار"
+          placeholder="الإطلالة"
           focusBorderColor="brand.400"
           shadow="sm"
           size="md"
@@ -349,25 +368,29 @@ const Form3 = () => {
         )
   })}
         </Select>
-        </FormControl>
-        <FormControl>
-          <FormLabel htmlFor="price" fontWeight={'normal'}>
-            السعر بالريال اليمني
+        </Box>
+        <Box width={["100%","fit-content"]}>
+          <FormLabel htmlFor="rooms" fonsSize={'sm'} fontWeight={'normal'}>
+          عدد الغرف
           </FormLabel>
-          <Input id="price" placeholder="price" />
-        </FormControl>
-      </Flex>
-      <Flex>
-      <FormControl>
+          <Input id="price" placeholder="عدد الغرف" />
+        </Box>
+        <Box width={["100%","fit-content"]}>
+          <FormLabel htmlFor="baths" fonsSize={'sm'} fontWeight={'normal'}>
+          عدد الحمامات
+          </FormLabel>
+          <Input id="price" placeholder="عدد الحمامات" />
+        </Box>
+        <Box width={["100%","fit-content"]}>
         <FormLabel htmlFor="view" fontWeight={'normal'}>
-          الإطلالة
+         قابلية للتفاوض
           </FormLabel>
         <Select
           direction="rtl"
           id="typeProperty"
           name="typeProperty"
           autoComplete="typeProperty"
-          placeholder=" نوع العقار"
+          placeholder=""
           focusBorderColor="brand.400"
           shadow="sm"
           size="md"
@@ -375,20 +398,58 @@ const Form3 = () => {
           rounded="md"
           onChange={handleViewChange}
           >
-          {viewList.map((propertyview)=>{
-        return (
-            <option key={propertyview} value={propertyview} >{propertyview}</option>
-        )
-      })}
+            <option value={'قابل للتفاوض'} >قابل للتفاوض</option>
+            <option value={'غير قابل للتفاوض'} > غير قابل للتفاوض</option>
+
         </Select>
+        </Box>
+        <Box width={["100%","fit-content"]}>
+          <FormLabel htmlFor="baths" fonsSize={'sm'} fontWeight={'normal'}>
+          سنة الإنشاء
+          </FormLabel>
+          <Input type="number" id="price"  />
+        </Box>
+        <Box width={["100%","fit-content"]}>
+        <FormLabel htmlFor="view" fontWeight={'normal'}>
+          نوع التشطيب
+          </FormLabel>
+        <Select
+          direction="rtl"
+          id="typeProperty"
+          name="typeProperty"
+          autoComplete="typeProperty"
+          placeholder=""
+          focusBorderColor="brand.400"
+          shadow="sm"
+          size="md"
+          w="full"
+          rounded="md"
+          onChange={handleViewChange}
+          >
+            <option value={' تشطيب كامل'} >تشطيب كامل </option>
+            <option value={' عظم '} >  عظم </option>
+            <option value={' تشطيب جزئي'} >تشطيب جزئي </option>
+        </Select>
+        </Box>
+        </Grid>
+        <FormControl>
+        <FormLabel htmlFor="password" fontWeight={'normal'} mt="2%">
+          عنوان العقار
+        </FormLabel>
+          <Input
+            pr="4.5rem"
+            type={'text'}
+          />
+           <MyMap sizes={{mapW:"100%",mapH:400}} geoDetail={{lat:"24.50685",lng:"54.407687"}} />
+
       </FormControl>
-      </Flex>
-      <FormControl mt="2%">
+        <FormControl mt="2%">
         <FormLabel htmlFor="email" fontWeight={'normal'}>
           Email address
         </FormLabel>
         <Input id="email" type="email" />
       </FormControl>
+
       <FormControl>
         <FormLabel htmlFor="password" fontWeight={'normal'} mt="2%">
           Password
@@ -406,6 +467,9 @@ const Form3 = () => {
           </InputRightElement>
         </InputGroup>
       </FormControl>
+
+
+      
     </>
   );
 };
