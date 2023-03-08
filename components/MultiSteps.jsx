@@ -128,8 +128,8 @@ const Form1 = () => {
           >
          {gadm41_YEM_1.features.map((city,index)=>{
       return (
-      <option key={index} value=`${city['properties']['NL_NAME_1']}`
-      >` ${city['properties']['NL_NAME_1']} `</option>
+      <option key={index} value={`${city['properties']['NL_NAME_1']}`}
+      >{` ${city['properties']['NL_NAME_1']} `}</option>
       )
       })}
         </Select>
@@ -161,7 +161,7 @@ const Form1 = () => {
          {yemenGis.features.filter(Directorate => 
             Directorate['properties']['NL_NAME_1'] ==city
         ).map((Directorate,index) =>(
-          <option key={index} value=`${Directorate['properties']['NL_NAME_2']}`>`${Directorate['properties']['NL_NAME_2']}`</option>
+          <option key={index} value={`${Directorate['properties']['NL_NAME_2']}`}>{`${Directorate['properties']['NL_NAME_2']}`}</option>
         ))
         }
         </Select>
