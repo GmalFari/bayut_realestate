@@ -23,7 +23,6 @@ const Search = ({properties}) => {
     const [searchFilter,setSearchFilter] = useState(false);
     const router = useRouter();
     const [toggleVerticalCard,setToggleVerticalCard] = useState('true');
-    const [toggleHorizonalCard,setToggleHorizonalCard] = useState('false')
     const listingsH = [properties.map((property) =>
                <HorizonalCard   property={property} key={property.id} /> 
                    )];
@@ -68,7 +67,7 @@ const Search = ({properties}) => {
 
         </Flex>
         <Text>
-            properties {router.query.purpose}
+            properties {router.query.minPrice}
         </Text>
         </Flex>
         <Flex flexDirection={['column']}  flexWrap="wrap" justifyContent="center" alignItems="center" >
@@ -120,4 +119,3 @@ export async function getServerSideProps({query}) {
                         }
                     }
 }
-

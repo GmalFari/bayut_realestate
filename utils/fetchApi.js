@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const baseUrl = 'https://bayut.p.rapidapi.com'
+const apiToken = 'aa9bb05f6262e9689e7e6b3f204bfc460c0f6b90'
 
 
 export const fetchApi = async (url) => {
@@ -14,6 +15,26 @@ export const fetchApi = async (url) => {
     return data; 
 }
 
+export const fetchApi2 = async (url) => {
+    const {data} = await axios.get((url), {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Token ${apiToken}`
+          },
+    });
+    return data; 
+}
+
+
+export const   createApi = async (url) => {
+    const {data} = await axios.post((url), {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Token ${apiToken}`
+          },
+    });
+    return data; 
+}
 
 // {'5416', '9170', '8288', '5003', '8122', '10387',
 //  '5549', '8617', '9669', '11436', '9137', '11416', 
