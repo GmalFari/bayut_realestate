@@ -19,6 +19,7 @@ import {
   FormHelperText,
   InputRightElement,
 } from '@chakra-ui/react';
+import Autocomplete from './AutoComplete';
 import MyMap from './Mymap';
 import yemenGis from "../utils/yemenGis.json";
 import gadm41_YEM_1 from "../utils/gadm41_YEM_1.json";
@@ -30,15 +31,27 @@ import axios from 'axios';
 
 
 const Form1 = () => {
+  const purposeList = ['للإيجار','للبيع']
+  const rentFrequencyList = ['يومي','اسبوعي','شهري','سنوي','نصف سنوي','ربع سنوي']
   const [city , setCity] = useState("")
   const [state , setState] = useState("")
-  
+  const [propertyPurpose,setPropertyPurpose] = useState(purposeList[0])
+  const [isForRent , setIsForRent] = useState(true)
+  const [rentFrequency,setRentFrequency] = useState()
   const handleCityChange = (e)=>{
     setCity(e.target.value)
   }
   const handleStateChange = (e)=>{
     setState(e.target.value)
 
+  }
+  const handlePurpose = (e) =>{
+    setIsForRent(!isForRent)
+    setPropertyPurpose(e.target.value)
+    console.log(isForRent)
+  }
+  const handleRentFrequency = (e) =>{
+      setRentFrequency(e.target.value)
   }
   return (
     <>
@@ -92,16 +105,42 @@ const Form1 = () => {
           id="purpose"
           name="purpose"
           autoComplete="purpose"
-          placeholder=" الغرض"
           focusBorderColor="brand.400"
           shadow="sm"
           size="sm"
           w="full"
-          rounded="md">
-          <option>للبيع</option>
-          <option>للإيجار</option>
+          rounded="md"
+          onChange={handlePurpose}
+          >
+          {purposeList.map((purposeItem,index)=>(
+          <option key={index}  value={propertyPurpose} selected={index===0}>{purposeItem}</option>
+          ))}
         </Select>
       </FormControl>
+      {isForRent && <Box width={["100%","fit-content"]}>
+        <FormLabel htmlFor="view" fontWeight={'normal'}>
+          عقد الإيجار
+          </FormLabel>
+        <Select
+          direction="rtl"
+          id="typeProperty"
+          name="typeProperty"
+          autoComplete="typeProperty"
+          focusBorderColor="brand.400"
+          shadow="sm"
+          size="md"
+          w="full"
+          rounded="md"
+          onChange={handleRentFrequency}
+          >
+          {rentFrequencyList.map((propertyview)=>{
+        return (
+            <option key={propertyview} value={propertyview} >{propertyview}</option>
+        )
+  })}
+  
+        </Select>
+        </Box>}
       <FormControl as={GridItem} colSpan={[6, 3]}>
         <FormLabel
           htmlFor="city"
@@ -308,14 +347,18 @@ const Form2 = () => {
 };
 const Form3 = () => {
   const [selectView ,setSelectView] =useState()
-
+  const [propertyLocation,setPropertyLocation] = useState({longitude:44.20729970272413,latitude:15.348533564724178})
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const handleViewChange = (e)=>{
     setSelectView(e.target.value)
   }
+
+  const ChooseLocation = (position) => {
+        setPropertyLocation({longitude:position['longitude'],latitude:position['latitude']})
+  }
   return (
-    <>
+    <>z
       <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
       وصف العقار
       </Heading>
@@ -345,6 +388,7 @@ const Form3 = () => {
           </FormLabel>
           <Input type="number" id="space" placeholder="المساحة" />
         </Box>
+        
         <Box width={["100%","fit-content"]}>
         <FormLabel htmlFor="view" fontWeight={'normal'}>
           الإطلالة
@@ -407,7 +451,7 @@ const Form3 = () => {
           <FormLabel htmlFor="baths" fonsSize={'sm'} fontWeight={'normal'}>
           سنة الإنشاء
           </FormLabel>
-          <Input type="number" id="price"  />
+          <Input type="number" id="price"  placeholder='2010:مثال'/>
         </Box>
         <Box width={["100%","fit-content"]}>
         <FormLabel htmlFor="view" fontWeight={'normal'}>
@@ -440,8 +484,7 @@ const Form3 = () => {
             pr="4.5rem"
             type={'text'}
           />
-           <MyMap sizes={{mapW:"100%",mapH:400}} geoDetail={{lat:"24.50685",lng:"54.407687"}} />
-
+           <MyMap sizes={{mapW:"100%",mapH:400}} ChooseLocation={ChooseLocation} geoDetail={{lat:"24.50685",lng:"54.407687"}} />
       </FormControl>
         <FormControl mt="2%">
         <FormLabel htmlFor="email" fontWeight={'normal'}>

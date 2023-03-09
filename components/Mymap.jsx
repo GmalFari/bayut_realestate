@@ -7,7 +7,7 @@ import { useState, useEffect,useContext,useRef } from "react";
 const MAPBOX_TOKEN = "pk.eyJ1IjoiamFtYWxkb2UiLCJhIjoiY2xlMDAwZWlhMTM5OTN3b2F0YnVscHFoYSJ9.N_J3cEVw10zYYVBGf3dMmg"; // Set your mapbox token here
 import "mapbox-gl/dist/mapbox-gl.css";
 
-const MyMap = ({geoDetail,sizes}) =>{
+const MyMap = ({geoDetail,sizes,ChooseLocation}) =>{
   const map = useRef(null);
     const {lat,lng} = {...geoDetail}
     const {mapW ,mapH} = {...sizes}
@@ -20,11 +20,12 @@ const MyMap = ({geoDetail,sizes}) =>{
         longitude:viewport.longitude,
         zoom:7
       })
-      console.log(viewport)
     })
   },[])
   function onClickMap(e) {
-    console.log(e.lngLat);
+    // console.log(e.lngLat);
+    ChooseLocation({latitude:e.lngLat.lat,longitude:e.lngLat.lng})
+
   }
 
   return (

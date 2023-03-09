@@ -42,12 +42,12 @@ interface LinkItemProps {
   icon: IconType;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home',url:'/', icon: FiHome },
-  { name: 'search',url:'/search', icon: FiTrendingUp },
-  { name: 'property for sale',url:'/', icon: FiCompass },
-  { name: 'property for rent',url:'/', icon: FiStar },
-  { name: 'agencies',url:'/agencies', icon: FiStar },
-  { name: 'Settings',url:'/', icon: FiSettings },
+  { name: 'الرئيسية',url:'/', icon: FiHome },
+  { name: 'أبحث عن عقار',url:'/search', icon: FiTrendingUp },
+  { name: 'أستأجر عقار ',url:'/', icon: FiCompass },
+  { name: 'بيع عقار',url:'/create', icon: FiStar },
+  { name: '',url:'/agencies', icon: FiStar },
+  { name: 'الإعدادات',url:'/', icon: FiSettings },
 ];
 
 export default function SidebarWithHeader({
