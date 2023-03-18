@@ -11,8 +11,9 @@ import Rent from "../assets/images/Rent_a_home.webp";
 import Sell from "../assets/images/Sell_a_home.webp";
 import Buy from "../assets/images/Buy_a_home.webp";
 import HorizonalCard from "../components/HorizonalCard";
-
-const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUrl }) => (
+import { useEffect } from 'react';
+const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUrl }) => 
+(
   <Flex  flexWrap="wrap" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner"  />
     <Box m="10">
@@ -28,6 +29,10 @@ const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUr
 
 
 export default function Home({propertiesForSale,propertiesForRent}) {
+  useEffect(() => {
+    localStorage.getItem('token')?console.log(localStorage.getItem('token')):console.log('notfound')
+    
+  }, []);
   return (
   
    <Box>

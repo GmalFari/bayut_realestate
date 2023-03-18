@@ -3,8 +3,15 @@ import {Text,Flex,Box, Grid,GridItem, Button } from '@chakra-ui/react';
 import {FcMenu,FcHome,FcAbout}  from 'react-icons/fc';
 import {BsSearch} from 'react-icons/bs'
 import {FiKey} from 'react-icons/fi';
-
-const Navbar = () =>  (
+import { useState,useEffect,Fragment  } from "react";
+const Navbar = () =>  {
+    const [isAuth,setIsAuth] = useState(false);
+    useEffect(()=>{
+      if(localStorage.getItem('token') !== null){
+        setIsAuth(true)
+      }
+    },[])
+    return (
     <Grid
     templateAreas={`"header nav profile"`}
     gridTemplateRows={'50px'}
@@ -34,5 +41,5 @@ const Navbar = () =>  (
       <Button >Login</Button>
     </GridItem>
   </Grid>
-    );
+  )};
 export default Navbar;

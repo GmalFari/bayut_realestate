@@ -138,7 +138,6 @@ const Form1 = () => {
             <option key={propertyview} value={propertyview} >{propertyview}</option>
         )
   })}
-  
         </Select>
         </Box>}
       <FormControl as={GridItem} colSpan={[6, 3]}>
@@ -358,7 +357,7 @@ const Form3 = () => {
         setPropertyLocation({longitude:position['longitude'],latitude:position['latitude']})
   }
   return (
-    <>z
+    <>
       <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
       وصف العقار
       </Heading>

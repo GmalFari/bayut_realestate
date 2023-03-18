@@ -237,7 +237,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
               <MenuItem>
-              <Link href="/profile/patriot-real-estate-7737" passHref>Settings</Link>
+              <Link href="/accounts/register" passHref>profile</Link>
+              </MenuItem>
+              <MenuItem>
+              <Link href="/accounts/login" passHref>تسجيل دخول</Link>
               </MenuItem>
               <MenuItem>Sign out</MenuItem>
             </MenuList>
