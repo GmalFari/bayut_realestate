@@ -39,7 +39,7 @@ const HorizonalCard = (
                 <Flex paddingTop="2" alignItems="center" justifyContent="space-between" >
                     <Flex alignItems="center">
                         <Box   paddingRight="0" color="green.400">{isVerified &&  <GoVerified />}</Box>
-                        <Text fontWeight="bold" fontSize="md"> AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
+                        <Text fontWeight="bold" fontSize="md"> ريال يمني  {millify(price * 50)}{rentFrequency && `/${rentFrequency}`}</Text>
                     </Flex>
                 </Flex>
                 
