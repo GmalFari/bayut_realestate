@@ -52,7 +52,7 @@ const PropertyDetails = ({propertyDetails:
       </Box>
         <Box marginTop="2">
             <Text fontSize="lg" marginBottom="2" fontWeight="bold">
-                {title_l1.replace('دبي','صنعاء')}
+                {title_l1.replace('صنعاء','دبي')}
             </Text>
             <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
             <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
@@ -62,7 +62,7 @@ const PropertyDetails = ({propertyDetails:
             </Grid>
             </Box>
             <Box lineHeight="2" color="gray.600">
-                {description_l1}
+                {description_l1.replace('صنعاء','دبي')}
             </Box>
         </Box>
             <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
