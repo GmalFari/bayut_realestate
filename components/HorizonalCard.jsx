@@ -16,6 +16,8 @@ const HorizonalCard = (
     {property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => {
       const loc11 = location[3]['name_l1']
       const loc1 = loc11.replace('Dubai','Sanaa');
+      const loc2 = location[1]['name_l1'].replace('Dubai','Sanaa');
+
       return (
       <Flex w={['95%','95%','700px','800px']} 
             height={[170,200]} 
@@ -52,7 +54,7 @@ const HorizonalCard = (
                 <BsFillGeoAltFill />
                 {`${loc1}`},
                 {`${location[2]['name_l1']}`},
-                {`${loc1}']}`}
+                {`${loc2}']}`}
                 </Flex>
 <Box display={"flex"} flexWrap='noWrap'   fontSize={['sm','md']} alignItems="center" p="1" justifyContent="right" w="100%" color="#000">
                 <Box display={"flex"} alignItems="center" ml={2}>  {rooms} <FaBed  /> </Box> 
