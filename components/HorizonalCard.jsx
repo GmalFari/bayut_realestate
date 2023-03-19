@@ -52,7 +52,7 @@ const HorizonalCard = (
                 <BsFillGeoAltFill />
                 {`${loc1}`},
                 {`${location[2]['name_l1']}`},
-                {`${location[1]['name_l1']}`}
+                {`${loc1}']}`}
                 </Flex>
 <Box display={"flex"} flexWrap='noWrap'   fontSize={['sm','md']} alignItems="center" p="1" justifyContent="right" w="100%" color="#000">
                 <Box display={"flex"} alignItems="center" ml={2}>  {rooms} <FaBed  /> </Box> 
