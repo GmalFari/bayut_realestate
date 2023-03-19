@@ -35,7 +35,7 @@ const PropertyDetails = ({propertyDetails:
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
           <Flex alignItems='center'>
             <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
-            <Text fontWeight='bold' fontSize='lg'>AED {price}{rentFrequency && `/${rentFrequency}`}</Text>
+            <Text fontWeight='bold' fontSize='lg'>ريال يمني  {price}{rentFrequency && `/${rentFrequency}`}</Text>
           </Flex>
           <Link href={`/agencies`}>
             <Avatar size='sm' src={agency?.logo?.url}></Avatar>
@@ -52,7 +52,7 @@ const PropertyDetails = ({propertyDetails:
       </Box>
         <Box marginTop="2">
             <Text fontSize="lg" marginBottom="2" fontWeight="bold">
-                {title_l1}
+                {$'{title_l1.replace('دبي','صنعاء')}'}
             </Text>
             <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
             <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
