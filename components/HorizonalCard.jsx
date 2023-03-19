@@ -14,6 +14,7 @@ import MainBtn from "./MainBtn";
 import Horizontal from './Horizontal';
 const HorizonalCard = (
     {property:{coverPhoto,price,rentFrequency,location,rooms,title_l1,baths,area,agency,isVerified,externalID,geography}}) => {
+      const loc1 = location[3]['name_l1'].replace('Dubai','Sanaa');
       return (
       <Flex w={['95%','95%','700px','800px']} 
             height={[170,200]} 
@@ -48,7 +49,7 @@ const HorizonalCard = (
                 </Text>
                 <Flex isTruncated flexWrap='noWrap' display={'flex'}  pt={[1,2]} fontSize={['11px','sm','md']} color={'#006169'} >
                 <BsFillGeoAltFill />
-                {`${location[3]['name_l1']}`},
+                {`${}`},
                 {`${location[2]['name_l1']}`},
                 {`${location[1]['name_l1']}`}
                 </Flex>
