@@ -1,4 +1,4 @@
-
+import axios from "axios";
 import {Flex,Grid,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button} from '@chakra-ui/react';
 import {FaBed,FaBath,FaImages,FaWhatsapp,FaEnvelope,FaPhone,FaShare,FaDownload,FaRegHeart} from 'react-icons/fa';
 import { Img } from '@chakra-ui/react';
@@ -16,6 +16,28 @@ const PropertyDetails = ({propertyDetails:
     ,title_l1,description_l1,baths,area,agency,
     isVerified,type,photos,amenities,furnishingStatus,geography}})=>{
     const [toggleMap,setToggleMap ] = useState(true)
+    const t = ''
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("q", "English is hard, but detectably so");
+
+  const options = {
+  method: 'POST',
+  url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect',
+  headers: {
+    'content-type': 'application/x-www-form-urlencoded',
+    'Accept-Encoding': 'application/gzip',
+    'X-RapidAPI-Key': '6cb10cae22mshe83ac21e4eb1de3p1897c1jsn0b3893d5488f',
+    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+  },
+  data: encodedParams
+   };
+
+   axios.request(options).then(function (response) {
+   t =respose.data	
+console.log(response.data);
+   }).catch(function (error) {
+	console.error(error);
+   });
     return(
 <Box maxWidth="1000px" margin="auto" p="4">
         <Flex>
@@ -62,6 +84,7 @@ const PropertyDetails = ({propertyDetails:
             </Grid>
             </Box>
             <Box lineHeight="2" color="gray.600">
+                 {t}
                 {description_l1.replace('صنعاء','دبي')}
             </Box>
         </Box>
