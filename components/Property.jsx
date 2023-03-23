@@ -20,7 +20,7 @@ const Property = (
                 <Flex paddingTop="2" alignItems="center" justifyContent="space-between" >
                     <Flex alignItems="center">
                         <Box paddingRight="3" color="green.400">{isVerified && <GoVerified />}</Box>
-                        <Text fontWeight="bold" fontSize="lg"> AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
+                        <Text fontWeight="bold" fontSize="lg"> ريال يمني  {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                     </Flex>
                     <Link href={`/agencies`}>
                     <Box>

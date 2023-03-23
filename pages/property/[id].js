@@ -1,4 +1,4 @@
-
+import axios from "axios";
 import {Flex,Grid,Select ,Box,Text,Input,Avatar,Spinner,Icon,Button} from '@chakra-ui/react';
 import {FaBed,FaBath,FaImages,FaWhatsapp,FaEnvelope,FaPhone,FaShare,FaDownload,FaRegHeart} from 'react-icons/fa';
 import { Img } from '@chakra-ui/react';
@@ -13,9 +13,31 @@ import { BasicUsage } from '../../components/BasicUsage';
 import MainBtn from '../../components/MainBtn';
 const PropertyDetails = ({propertyDetails:
     {coverPhoto,price,rentFrequency,rooms,purpose
-    ,title_l1,description,baths,area,agency,
+    ,title_l1,description_l1,baths,area,agency,
     isVerified,type,photos,amenities,furnishingStatus,geography}})=>{
     const [toggleMap,setToggleMap ] = useState(true)
+    const t = ''
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("q", "English is hard, but detectably so");
+
+  const options = {
+  method: 'POST',
+  url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect',
+  headers: {
+    'content-type': 'application/x-www-form-urlencoded',
+    'Accept-Encoding': 'application/gzip',
+    'X-RapidAPI-Key': '6cb10cae22mshe83ac21e4eb1de3p1897c1jsn0b3893d5488f',
+    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+  },
+  data: encodedParams
+   };
+
+   axios.request(options).then(function (response) {
+   t =respose.data	
+console.log(response.data);
+   }).catch(function (error) {
+	console.error(error);
+   });
     return(
 <Box maxWidth="1000px" margin="auto" p="4">
         <Flex>
@@ -35,7 +57,7 @@ const PropertyDetails = ({propertyDetails:
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
           <Flex alignItems='center'>
             <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
-            <Text fontWeight='bold' fontSize='lg'>AED {price}{rentFrequency && `/${rentFrequency}`}</Text>
+            <Text fontWeight='bold' fontSize='lg'>ريال يمني  {price}{rentFrequency && `/${rentFrequency}`}</Text>
           </Flex>
           <Link href={`/agencies`}>
             <Avatar size='sm' src={agency?.logo?.url}></Avatar>
@@ -52,7 +74,7 @@ const PropertyDetails = ({propertyDetails:
       </Box>
         <Box marginTop="2">
             <Text fontSize="lg" marginBottom="2" fontWeight="bold">
-                {title_l1}
+                {title_l1.replace('صنعاء','دبي')}
             </Text>
             <Box p={0} bg='#fff' position={['fixed','fixed','fixed','relative']} left={0} bottom={'0'} width={'100%'}>
             <Grid  templateColumns='repeat(3, 1fr)' gap={2} >
@@ -62,7 +84,8 @@ const PropertyDetails = ({propertyDetails:
             </Grid>
             </Box>
             <Box lineHeight="2" color="gray.600">
-                {description}
+                 {t}
+                {description_l1.replace('صنعاء','دبي')}
             </Box>
         </Box>
             <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
