@@ -14,6 +14,7 @@ import {
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useState,useEffect } from "react";
 const  LoginComponent=()=> {
+  const [loading,setLoading]=useState(false)
   const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {

@@ -361,22 +361,6 @@ const Form3 = () => {
       <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
       وصف العقار
       </Heading>
-      <FormControl>
-        <FormLabel htmlFor="password" fontWeight={'normal'} mt="2%">
-        </FormLabel>
-        <InputGroup size="md">
-          <Input
-            pr="4.5rem"
-            type={show ? 'text' : 'password'}
-            placeholder="Enter password"
-          />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? 'Hide' : 'Show'}
-            </Button>
-          </InputRightElement>
-        </InputGroup>
-      </FormControl>
       <Grid
         templateColumns='repeat(auto-fit, minmax(150px, 1fr))'
         gap={4}
@@ -492,23 +476,7 @@ const Form3 = () => {
         <Input id="email" type="email" />
       </FormControl>
 
-      <FormControl>
-        <FormLabel htmlFor="password" fontWeight={'normal'} mt="2%">
-          Password
-        </FormLabel>
-        <InputGroup size="md">
-          <Input
-            pr="4.5rem"
-            type={show ? 'text' : 'password'}
-            placeholder="Enter password"
-          />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? 'Hide' : 'Show'}
-            </Button>
-          </InputRightElement>
-        </InputGroup>
-      </FormControl>
+      
 
 
       
