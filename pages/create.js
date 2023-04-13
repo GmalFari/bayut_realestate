@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React from 'react'
 import { Box } from '@chakra-ui/react';
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useContext } from 'react';
 import { fetchApi,createApi, fetchApi2 } from '../utils/fetchApi';
 import Form1 from "../components/MultiSteps";
 import typeProperty from "../utils/selectedData";
 import yemenGis from "../utils/yemenGis.json"
 import gadm41_YEM_1 from "../utils/gadm41_YEM_1.json";
-
+import AuthContext from '../context/AuthContext';
 const create = () => {
+  const {user} = useContext(AuthContext)
   // const [city , setCity] = useState("")
   // const [state , setState] = useState("")
   // const [typedata,setTypedata] = useState(typeProperty);
@@ -55,10 +56,13 @@ const create = () => {
 //   }
   
   return (
-
+    <>
+    {user?
     <Box>
-    <Form1/>
-    </Box>
+      <Form1/>
+      </Box>:window.location.replace("/accounts/login")}
+      </>
+    
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import {
@@ -41,6 +41,9 @@ interface LinkItemProps {
   url:string;
   icon: IconType;
 }
+
+import AuthContext from '../context/AuthContext';
+
 const LinkItems: Array<LinkItemProps> = [
   { name: 'الرئيسية',url:'/', icon: FiHome },
   { name: 'أبحث عن عقار',url:'/search', icon: FiTrendingUp },
@@ -162,6 +165,7 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  let {user} = useContext(AuthContext);
   return (
     <Flex
 
@@ -240,7 +244,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <Link href="/accounts/register" passHref>profile</Link>
               </MenuItem>
               <MenuItem>
-              <Link href="/accounts/login" passHref>تسجيل دخول</Link>
+                {user?<Link href="/accounts/logout" passHref>تسجيل خروج</Link>:
+                        <Link href="/accounts/login" passHref>تسجيل دخول</Link>}             
               </MenuItem>
               <MenuItem>Sign out</MenuItem>
             </MenuList>

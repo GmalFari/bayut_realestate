@@ -5,9 +5,8 @@ import Layout from '../components/Layout';
 import "nprogress/nprogress.css";
 import NProgress  from "nprogress";
 import { useEffect,createContext } from "react";
-
 import "./carousel.scss";
-
+import { AuthProvider } from "../context/AuthContext";
 const mapContext = createContext()
 
 function MyApp({Component,pageProps,router}){
@@ -28,9 +27,11 @@ function MyApp({Component,pageProps,router}){
     return (
         
         <ChakraProvider theme={extendTheme({ direction: "rtl" })}>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <AuthProvider>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+            </AuthProvider>
         </ChakraProvider>
     );
 }

@@ -3,8 +3,10 @@ import {Text,Flex,Box, Grid,GridItem, Button } from '@chakra-ui/react';
 import {FcMenu,FcHome,FcAbout}  from 'react-icons/fc';
 import {BsSearch} from 'react-icons/bs'
 import {FiKey} from 'react-icons/fi';
-import { useState,useEffect,Fragment  } from "react";
+import { useState,useEffect,Fragment,useContext  } from "react";
+import AuthContext from "../context/AuthContext";
 const Navbar = () =>  {
+  const {user} = useContext(AuthContext);
     const [isAuth,setIsAuth] = useState(false);
     useEffect(()=>{
       if(localStorage.getItem('token') !== null){
@@ -38,7 +40,7 @@ const Navbar = () =>  {
     </Flex>
     </GridItem>
     <GridItem ms="100px" pl='2' area={'profile'}>
-      <Button >Login</Button>
+      {user !== null?user.username:<Link href="/accounts/login" passHref>Login</Link>}
     </GridItem>
   </Grid>
   )};

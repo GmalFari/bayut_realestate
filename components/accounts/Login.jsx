@@ -11,63 +11,43 @@ import {
   InputGroup,
   InputRightElement
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 const  LoginComponent=()=> {
-  const [loading,setLoading]=useState(false)
+  let {loginUser} = useContext(AuthContext)
+  console.log(loginUser)
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState(false);
+  const [loading,setLoading] = useState(true);
+  const router = useRouter();
+  // useEffect(() => {
+  //   if (localStorage.getItem('authTokens') !== null) {
+      
+  //     history.back();
+  //   } else {
+  //     setLoading(false);
+  //   }
+  // }, []);
   const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      
       window.location.replace('http://localhost:3000/');
     } else {
       setLoading(false);
     }
   }, []);
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-      rememberMe: false
-    },
-    
-   onSubmit: values => {
-    // e.preventDefault();
-    // alert(JSON.stringify(values, null, 2))
-    const user = {
-      email: formik.values.email,
-      password: formik.values.password
-    };
-    fetch('http://127.0.0.1:8000/auth/token/login/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.auth_token) {
-          localStorage.clear();
-          localStorage.setItem('token', data.auth_token);
-          console.log(localStorage.getItem('token'))
-          window.location.replace('http://localhost:3000/');
 
-        } else {
-          console.log('not found')
-          setEmail('');
-          setPassword('');
-          localStorage.clear();
-          setErrors(true);
-        }
-      });
-  }
-  });
+
+
+
   return (
     <Flex bg="gray.100" align="center" justify="center" h="100vh">
       <Box bg="white" p={6} rounded="md">
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={loginUser}>
           <VStack spacing={4} align="flex-start">
             <FormControl>
               <FormLabel htmlFor="email">البريد الإلكتروني</FormLabel>
@@ -76,17 +56,24 @@ const  LoginComponent=()=> {
                 name="email"
                 type="email"
                 variant="filled"
-                onChange={formik.handleChange}
-                value={formik.values.email}
+                required
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+
               />
             </FormControl>
             <FormControl>
               <FormLabel htmlFor="password">كلمة السر </FormLabel>
               <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
+                  <Input
+                   name="password"
+                   value={password}
+                  required
+                  onChange={e => setPassword(e.target.value)}
+                        type={showPassword ? 'text' : 'password'} />
                   <InputRightElement h={'full'}>
                     <Button
-                      variant={'ghost'}
+                      variaznt={'ghost'}
                       onClick={() =>
                         setShowPassword((showPassword) => !showPassword)
                       }>
@@ -98,8 +85,6 @@ const  LoginComponent=()=> {
             <Checkbox
               id="rememberMe"
               name="rememberMe"
-              onChange={formik.handleChange}
-              isChecked={formik.values.rememberMe}
               colorScheme="purple"
             >
               Remember me?
@@ -113,4 +98,5 @@ const  LoginComponent=()=> {
     </Flex>
   );
 }
+
 export default LoginComponent;

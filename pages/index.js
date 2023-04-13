@@ -29,10 +29,10 @@ const Banner = ({purpose , title1,title2,desc1,desc2,buttonText,linkName,imageUr
 
 
 export default function Home({propertiesForSale,propertiesForRent}) {
-  useEffect(() => {
-    localStorage.getItem('token')?console.log(localStorage.getItem('token')):console.log('notfound')
+  // useEffect(() => {
+  //   localStorage.getItem('token')?console.log(localStorage.getItem('token')):console.log('notfound')
     
-  }, []);
+  // }, []);
   return (
   
    <Box>
