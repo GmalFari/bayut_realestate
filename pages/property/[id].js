@@ -85,7 +85,7 @@ console.log(response.data);
             </Box>
             <Box lineHeight="2" color="gray.600">
                  {t}
-                {description_l1.replace('صنعاء','دبي')}
+                {description_l1}
             </Box>
         </Box>
             <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
