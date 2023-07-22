@@ -65,7 +65,7 @@ export default function Home({propertiesForSale,propertiesForRent}) {
       <Heading  >
       العقارات الأكثر بحثاً
       </Heading>
-      <Section2 />
+    
       </Box>     
       </Box>
    </Box>
